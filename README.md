@@ -165,13 +165,24 @@ sample pair (`pair_02_dxf_sample`, a synthetic DXF built directly rather than vi
 redact+reinsert) scores **precision=1.0, recall=1.0, f1=1.0** with the identical delta
 engine code.
 
+**Eval dataset size:** 50 hand-labeled Q&A pairs total (35 for `pair_01`, 15 for
+`pair_02_dxf_sample`) in `eval/datasets/`, covering four question types per pair: paraphrases
+of each known delta, static/unchanged-content questions (equipment table values, notes that
+didn't change), deliberate refusal cases (asking about facts genuinely absent from the
+sources, to check the system doesn't hallucinate), and aggregate/count questions. Every
+`expected` fact and `expected_source_contains` substring was checked against the actual
+extracted document text, not guessed.
+
 **Retrieval quality (`make eval`, BM25 recall@8, no LLM involved):**
-`pair_01`: recall@8 = 0.5 (3/6) — misses correlate exactly with the chat questions the
-LLM-as-judge later marks incorrect ("note 5", "note removed", "note 3"), confirming those
-are retrieval failures, not generation failures: BM25's lexical matching doesn't surface a
-chunk for a question that doesn't share vocabulary with the source text (e.g. "note 3"
-never appears verbatim near the atmospheric-vent text on the page). This is the strongest
-argument in this repo for adding embedding-based retrieval.
+`pair_01`: recall@8 = 0.379 (on the full 35-question set — the earlier 6-question sample
+had shown a more optimistic 0.5, which is exactly why a larger labeled set matters: it was
+hiding real gaps). `pair_02`: recall@8 = 1.0 (smaller document, less lexical competition
+between chunks). The `pair_01` misses correlate with chat questions the LLM-as-judge later
+marks incorrect, confirming several of those are retrieval failures, not generation
+failures: BM25's lexical matching doesn't surface a chunk for a question that doesn't share
+vocabulary with the source text (e.g. "note 3" never appears verbatim near the
+atmospheric-vent text on the page). This is the strongest argument in this repo for adding
+embedding-based retrieval.
 
 **Cost/latency (`make cost-report`, from real observed traces, not estimates):**
 The delta-alignment stage, not the LLM call, is the actual bottleneck — p50 ≈ 7.4s for the

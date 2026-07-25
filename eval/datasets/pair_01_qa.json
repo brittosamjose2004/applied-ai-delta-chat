@@ -30,6 +30,145 @@
       "question": "What is note 3 about?",
       "expected": "Atmospheric vent (unchanged between revisions).",
       "expected_source_contains": "ATMOSPHERIC VENT"
+    },
+    {
+      "question": "Has instrument tag 26-PIT-9077 been renumbered?",
+      "expected": "Yes, to 26-PIT-9099.",
+      "expected_source_contains": "26-PIT-9099"
+    },
+    {
+      "question": "By how much did the design pressure downstream of the compressor increase?",
+      "expected": "From 257 BARG to 265 BARG, an 8 BARG increase.",
+      "expected_source_contains": "265 BARG"
+    },
+    {
+      "question": "Is note 5 identical in both revisions?",
+      "expected": "No, it changed from a temporary hose arrangement to a permanent arrangement with a dedicated pump.",
+      "expected_source_contains": "DEDICATED PUMP"
+    },
+    {
+      "question": "Which note describes the flame arrester and what happened to it in the revision?",
+      "expected": "Note 8 describes the flame arrester; it was removed entirely in Rev B.",
+      "expected_source_contains": "FLAME ARRESTER"
+    },
+    {
+      "question": "What is the tag number of the 3rd stage HP gas lift compressor?",
+      "expected": "26-KA-901.",
+      "expected_source_contains": "26-KA-901"
+    },
+    {
+      "question": "What is the service description for tag 26-KA-901?",
+      "expected": "3RD STAGE HP GAS LIFT COMPRESSOR.",
+      "expected_source_contains": "3RD STAGE HP GAS LIFT COMPRESSOR"
+    },
+    {
+      "question": "What is the duty, in kW, of the compressor?",
+      "expected": "776 kW.",
+      "expected_source_contains": "776"
+    },
+    {
+      "question": "What is the flow rate of the compressor in kg/h?",
+      "expected": "19057 kg/h.",
+      "expected_source_contains": "19057"
+    },
+    {
+      "question": "What are the discharge and suction operating pressures (max) for the compressor?",
+      "expected": "229 / 108.5 Barg.",
+      "expected_source_contains": "229"
+    },
+    {
+      "question": "What material is the compressor casing made of?",
+      "expected": "LTCS (1.7218).",
+      "expected_source_contains": "LTCS"
+    },
+    {
+      "question": "What type of compressor is 26-KA-901?",
+      "expected": "Variable speed motor driven centrifugal.",
+      "expected_source_contains": "CENTRIFUGAL"
+    },
+    {
+      "question": "Who is the vendor for the compressor?",
+      "expected": "MAN Energy Solutions.",
+      "expected_source_contains": "MAN ENERGY SOLUTIONS"
+    },
+    {
+      "question": "What quantity is specified for the compressor (e.g. 1x100%)?",
+      "expected": "1x100%.",
+      "expected_source_contains": "1x100"
+    },
+    {
+      "question": "What does note 1 say?",
+      "expected": "26-PDI-9054 HH initiates pressurized compressor stop.",
+      "expected_source_contains": "INITIATE PRESSURIZED COMPRESSOR STOP"
+    },
+    {
+      "question": "What does note 2 describe?",
+      "expected": "Lube oil reservoir vent; oil mist separator installed off-skid.",
+      "expected_source_contains": "LUBE OIL RESERVOIR VENT"
+    },
+    {
+      "question": "What does note 4 instruct regarding vents and drains?",
+      "expected": "High point vent and low point drain to be finalized by piping as per piping layout.",
+      "expected_source_contains": "HIGH POINT VENT AND LOW POINT DRAIN"
+    },
+    {
+      "question": "What does note 11 say about the compressor motor?",
+      "expected": "The compressor motor is equipped with a variable speed drive (VSD).",
+      "expected_source_contains": "VARIABLE SPEED DRIVE"
+    },
+    {
+      "question": "What is the design pressure of the external system downstream of the compressor, after the revision?",
+      "expected": "265 BARG.",
+      "expected_source_contains": "265 BARG"
+    },
+    {
+      "question": "What work pack is referenced on the drawing?",
+      "expected": "WP-037, construction of new process module R510.",
+      "expected_source_contains": "WP-037"
+    },
+    {
+      "question": "What is the diameter of the discharge nozzle in millimeters?",
+      "expected": "This is not stated anywhere in the provided sources."
+    },
+    {
+      "question": "Who manufactured control valve 26-FV-9076?",
+      "expected": "This is not stated anywhere in the provided sources."
+    },
+    {
+      "question": "What is the ambient temperature rating of the installation site?",
+      "expected": "This is not stated anywhere in the provided sources."
+    },
+    {
+      "question": "Does the drawing mention a fire suppression system?",
+      "expected": "This is not mentioned anywhere in the provided sources."
+    },
+    {
+      "question": "What is the total project cost for this compressor package?",
+      "expected": "This is not mentioned anywhere in the provided sources."
+    },
+    {
+      "question": "How many total changes were made between the two revisions?",
+      "expected": "5 documented changes: a modified note (oil change procedure), a removed note (flame arrester), a modified instrument tag (26-PIT-9077), a modified value (design pressure), and an added note (bypass line)."
+    },
+    {
+      "question": "How many notes were removed between the two revisions?",
+      "expected": "1 — the flame arrester note.",
+      "expected_source_contains": "FLAME ARRESTER"
+    },
+    {
+      "question": "How many notes were added between the two revisions?",
+      "expected": "1 — the note referencing the temporary bypass line and FCN-0142.",
+      "expected_source_contains": "FCN-0142"
+    },
+    {
+      "question": "Was any instrument tag renumbered between the two revisions?",
+      "expected": "Yes, 26-PIT-9077 was renumbered to 26-PIT-9099.",
+      "expected_source_contains": "26-PIT-9099"
+    },
+    {
+      "question": "Did any numeric value change on the drawing between revisions?",
+      "expected": "Yes, the design pressure changed from 257 BARG to 265 BARG.",
+      "expected_source_contains": "265 BARG"
     }
   ]
 }

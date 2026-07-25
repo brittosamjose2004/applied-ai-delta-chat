@@ -1,0 +1,77 @@
+{
+  "pair_id": "pair_02_dxf_sample",
+  "qa": [
+    {
+      "question": "What happened to instrument tag 26-PIT-4001?",
+      "expected": "It was renumbered to 26-PIT-4099.",
+      "expected_source_contains": "26-PIT-4099"
+    },
+    {
+      "question": "Did the suction pressure tag number change between revisions?",
+      "expected": "Yes, from 26-PIT-4001 to 26-PIT-4099.",
+      "expected_source_contains": "4099"
+    },
+    {
+      "question": "What happened to the discharge temperature tag 26-TIT-4002?",
+      "expected": "It was removed entirely in the revised drawing.",
+      "expected_source_contains": "26-TIT-4002"
+    },
+    {
+      "question": "Was any tag removed between the two DXF revisions?",
+      "expected": "Yes, 26-TIT-4002 (discharge temp) was removed.",
+      "expected_source_contains": "26-TIT-4002"
+    },
+    {
+      "question": "Did the insulation spec number in note 2 change?",
+      "expected": "Yes, from spec 4471 to spec 4900.",
+      "expected_source_contains": "4900"
+    },
+    {
+      "question": "What spec number is referenced in the insulation note after the revision?",
+      "expected": "Spec 4900.",
+      "expected_source_contains": "SPEC 4900"
+    },
+    {
+      "question": "Did valve 26-FV-4010's fail-safe action change?",
+      "expected": "Yes, from fail closed to fail open.",
+      "expected_source_contains": "FAIL OPEN"
+    },
+    {
+      "question": "What is valve 26-FV-4010's fail-safe action in the revised drawing?",
+      "expected": "Fail open.",
+      "expected_source_contains": "FAIL OPEN"
+    },
+    {
+      "question": "Was a new note added in the revised DXF drawing?",
+      "expected": "Yes, note 3, referencing a new isolation valve added per RFC-88.",
+      "expected_source_contains": "RFC-88"
+    },
+    {
+      "question": "What does the newly added note in the revised drawing reference?",
+      "expected": "RFC-88, regarding a new isolation valve.",
+      "expected_source_contains": "RFC-88"
+    },
+    {
+      "question": "What does note 1 say?",
+      "expected": "Drain valve manual operation.",
+      "expected_source_contains": "DRAIN VALVE MANUAL OPERATION"
+    },
+    {
+      "question": "Did note 1 change between the two revisions?",
+      "expected": "No, it's unchanged — drain valve manual operation.",
+      "expected_source_contains": "DRAIN VALVE MANUAL OPERATION"
+    },
+    {
+      "question": "How many total changes were made between the two DXF revisions?",
+      "expected": "5: a modified tag, a removed tag, a modified note, a modified text entity, and an added note."
+    },
+    {
+      "question": "Does the drawing mention a pressure relief valve?",
+      "expected": "This is not mentioned anywhere in the provided sources."
+    },
+    {
+      "question": "What is the material specification of the compressor casing in this drawing?",
+      "expected": "This is not stated anywhere in the provided sources."
+    }
+  ]
+}
