@@ -23,7 +23,7 @@ from src.chat.answer import answer_question
 from src.chat.index import build_index
 from src.delta.engine import build_delta
 from src.ingest.registry import ingest_pid
-from src.markup.overlay import render_markup
+from src.markup.overlay import UnsupportedMarkupFormatError, render_markup
 from src.observability.tracing import Trace
 from src.pipeline import run_delta_pipeline
 
@@ -41,8 +41,11 @@ def cmd_markup(args):
     doc_a = ingest_pid(args.pid_a, args.path_a)
     doc_b = ingest_pid(args.pid_b, args.path_b)
     items = build_delta(doc_a, doc_b)
-    out_path = render_markup(args.path_b, items, args.out)
-    print(f"Markup written: {out_path} ({len(items)} changes overlaid)")
+    try:
+        out_path = render_markup(args.path_b, items, args.out)
+        print(f"Markup written: {out_path} ({len(items)} changes overlaid)")
+    except UnsupportedMarkupFormatError as e:
+        print(f"Markup skipped: {e}")
 
 
 def cmd_chat(args):

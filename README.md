@@ -137,6 +137,12 @@ above) — that's the scope cut called out below.
   conversion step itself is out of scope.
 - **Embedding-based retrieval**: BM25 only (see trade-offs above); no embedding provider
   wired in alongside it.
+- **Delta markup for DXF**: the markup overlay (`make markup`) only supports PDF sources —
+  PyMuPDF's annotation API is PDF-specific. A DXF input raises a clear
+  `UnsupportedMarkupFormatError` (visible failure, not a raw traceback or a silent no-op);
+  delta computation, the report, chat, and eval all still work fully on DXF documents,
+  only the visual overlay is PDF-only. Rendering markup for DXF would mean rasterizing the
+  CAD geometry to an image/PDF first.
 - **Multi-user web UI**: the served UI (`make web`) keeps a single global in-memory session
   — fine for a local demo, not for concurrent users. A real deployment would key session
   state by request/user id instead of a module-level dict.

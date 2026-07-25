@@ -1,0 +1,104 @@
+{
+  "pid_a": "PID-A",
+  "pid_b": "PID-B",
+  "generated_at": "2026-07-25T10:09:22.194865+00:00",
+  "summary": {
+    "total_changes": 5,
+    "added": 1,
+    "removed": 1,
+    "modified": 3
+  },
+  "changes": [
+    {
+      "id": "8ead5b2f-7007-4147-9ea0-e9f72e7fe0b6",
+      "change_type": "added",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        0.0,
+        49.305934515688946,
+        89.07742155525239,
+        52.5
+      ],
+      "before": null,
+      "after": "NOTE 3: NEW ISOLATION VALVE ADDED PER RFC-88",
+      "description": "Added text: \"NOTE 3: NEW ISOLATION VALVE ADDED PER RFC-88\"",
+      "confidence": 0.9,
+      "extra": {}
+    },
+    {
+      "id": "eff16078-56d3-49e0-b576-a05c839ae986",
+      "change_type": "modified",
+      "category": "tag",
+      "page": 0,
+      "bbox": [
+        0.0,
+        59.305934515688946,
+        49.88744884038199,
+        62.5
+      ],
+      "before": "VALVE 26-FV-4010 FAIL CLOSED",
+      "after": "VALVE 26-FV-4010 FAIL OPEN",
+      "description": "Modified tag: \"VALVE 26-FV-4010 FAIL CLOSED\" -> \"VALVE 26-FV-4010 FAIL OPEN\"",
+      "confidence": 0.916,
+      "extra": {
+        "match_score": 0.916
+      }
+    },
+    {
+      "id": "d1bfff6f-921e-4623-9234-a0ba4d9d9b33",
+      "change_type": "modified",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        0.0,
+        69.30593451568895,
+        62.88540245566167,
+        72.5
+      ],
+      "before": "NOTE 2: INSULATION PER SPEC 4471",
+      "after": "NOTE 2: INSULATION PER SPEC 4900",
+      "description": "Modified text: \"NOTE 2: INSULATION PER SPEC 4471\" -> \"NOTE 2: INSULATION PER SPEC 4900\"",
+      "confidence": 0.934,
+      "extra": {
+        "match_score": 0.934
+      }
+    },
+    {
+      "id": "6286bfb0-00b4-48ea-92c1-3247e7cfdb35",
+      "change_type": "removed",
+      "category": "tag",
+      "page": 0,
+      "bbox": [
+        0.0,
+        89.30593451568895,
+        51.62346521145976,
+        92.5
+      ],
+      "before": "26-TIT-4002 DISCHARGE TEMP",
+      "after": null,
+      "description": "Removed tag: \"26-TIT-4002 DISCHARGE TEMP\"",
+      "confidence": 0.9,
+      "extra": {}
+    },
+    {
+      "id": "a86c24ba-7187-49fc-8c54-d4faefc2f724",
+      "change_type": "modified",
+      "category": "tag",
+      "page": 0,
+      "bbox": [
+        0.0,
+        99.30593451568895,
+        56.28410641200546,
+        102.5
+      ],
+      "before": "26-PIT-4001 SUCTION PRESSURE",
+      "after": "26-PIT-4099 SUCTION PRESSURE",
+      "description": "Modified tag: \"26-PIT-4001 SUCTION PRESSURE\" -> \"26-PIT-4099 SUCTION PRESSURE\"",
+      "confidence": 0.95,
+      "extra": {
+        "match_score": 0.95
+      }
+    }
+  ]
+}
