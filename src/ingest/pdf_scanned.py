@@ -57,10 +57,9 @@ class ScannedPdfAdapter(FormatAdapter):
         pages: list[Page] = []
         for pindex, pdf_page in enumerate(doc):
             pix = pdf_page.get_pixmap(dpi=200)
-            img_bytes = pix.tobytes("png")
             page_w, page_h = pdf_page.rect.width, pdf_page.rect.height
 
-            elements = self._ocr_page(img_bytes, page_w, page_h)
+            elements = self._ocr_page_tiled(pix, page_w, page_h)
             pages.append(Page(index=pindex, width=page_w, height=page_h, elements=elements))
         doc.close()
         return CanonicalDocument(
@@ -71,7 +70,46 @@ class ScannedPdfAdapter(FormatAdapter):
             metadata={"page_count": len(pages), "ocr_method": "vision_llm"},
         )
 
-    def _ocr_page(self, img_bytes: bytes, page_w: float, page_h: float) -> list[TextElement]:
+    def _ocr_page_tiled(self, pix, page_w: float, page_h: float) -> list[TextElement]:
+        """Split the page into a grid of tiles and OCR each separately, then
+        merge with bbox offsets. A dense P&ID sheet (~875 text elements)
+        blows past a single call's token budget (see git history / README —
+        this used to just silently drop most of the page); each tile has
+        far fewer elements, so it completes without truncating."""
+        from PIL import Image
+        import io
+
+        cols, rows = _tile_grid()
+        img = Image.open(io.BytesIO(pix.tobytes("png")))
+        W, H = img.size
+
+        elements: list[TextElement] = []
+        for row in range(rows):
+            for col in range(cols):
+                x0, x1 = W * col // cols, W * (col + 1) // cols
+                y0, y1 = H * row // rows, H * (row + 1) // rows
+                tile_img = img.crop((x0, y0, x1, y1))
+                buf = io.BytesIO()
+                tile_img.save(buf, format="PNG")
+
+                tile_w_pts = (x1 - x0) / W * page_w
+                tile_h_pts = (y1 - y0) / H * page_h
+                offset_x_pts = x0 / W * page_w
+                offset_y_pts = y0 / H * page_h
+
+                tile_elements = self._ocr_image(buf.getvalue(), tile_w_pts, tile_h_pts)
+                for el in tile_elements:
+                    el.bbox.x0 += offset_x_pts
+                    el.bbox.x1 += offset_x_pts
+                    el.bbox.y0 += offset_y_pts
+                    el.bbox.y1 += offset_y_pts
+                elements.extend(tile_elements)
+        return elements
+
+    def _ocr_image(self, img_bytes: bytes, region_w: float, region_h: float) -> list[TextElement]:
+        """OCR a single image (a full page, or one tile of one) and return
+        elements with bbox in that image's own point-space (caller offsets
+        into page space for tiles)."""
         from src.chat.llm import default_client
 
         max_tokens = int(os.environ.get("VISION_OCR_MAX_TOKENS", 8192))
@@ -82,10 +120,8 @@ class ScannedPdfAdapter(FormatAdapter):
         last_output_tokens = 0
         last_provider = "unknown"
         # One retry if the first attempt salvaged nothing at all — sampling
-        # variance on where a dense page gets cut off means a second attempt
-        # sometimes clears a truncation point earlier and recovers plenty of
-        # elements even without the whole page completing. Not a fix for the
-        # underlying token-budget limit (see README), just cheap resilience.
+        # variance on where a dense region gets cut off means a second
+        # attempt sometimes clears a truncation point earlier.
         for attempt in range(2):
             resp = client.complete_vision(img_bytes, OCR_PROMPT, max_tokens=max_tokens)
             raw = resp.text.strip()
@@ -98,8 +134,9 @@ class ScannedPdfAdapter(FormatAdapter):
         if was_truncated:
             # Bad/incomplete OCR is exactly the failure category the spec calls
             # out by name — surface it loudly, don't silently return an empty
-            # page. Dense sheets can still exceed max_tokens; salvaging the
-            # complete elements we did get beats discarding everything.
+            # region. An extremely dense tile can still exceed max_tokens;
+            # salvaging the complete elements we did get beats discarding
+            # everything.
             log(logger, "warning",
                 "vision OCR response was truncated (hit max_tokens); salvaged partial results",
                 provider=last_provider, output_tokens=last_output_tokens,
@@ -112,9 +149,9 @@ class ScannedPdfAdapter(FormatAdapter):
             if not text or not bbox or len(bbox) != 4:
                 continue
             x0, y0, x1, y1 = bbox
-            # denormalize 0-1000 grid -> page point coordinates
-            px0, py0 = x0 / 1000 * page_w, y0 / 1000 * page_h
-            px1, py1 = x1 / 1000 * page_w, y1 / 1000 * page_h
+            # denormalize 0-1000 grid -> this image's point coordinates
+            px0, py0 = x0 / 1000 * region_w, y0 / 1000 * region_h
+            px1, py1 = x1 / 1000 * region_w, y1 / 1000 * region_h
             elements.append(TextElement(
                 id=str(uuid.uuid4()),
                 text=text,
@@ -124,6 +161,19 @@ class ScannedPdfAdapter(FormatAdapter):
                 extra={"ocr": "vision_llm"},
             ))
         return elements
+
+
+def _tile_grid() -> tuple[int, int]:
+    """(cols, rows) from VISION_OCR_TILE_GRID, e.g. '3x3'. Default 3x3: a
+    dense full-sheet P&ID (~875 elements) averages ~100/tile, comfortably
+    under an 8192-token budget per tile. '1x1' disables tiling."""
+    raw = os.environ.get("VISION_OCR_TILE_GRID", "3x3").lower()
+    cols_s, _, rows_s = raw.partition("x")
+    try:
+        cols, rows = max(1, int(cols_s)), max(1, int(rows_s))
+    except ValueError:
+        cols, rows = 3, 3
+    return cols, rows
 
 
 def _parse_ocr_json(raw: str) -> tuple[list, bool]:

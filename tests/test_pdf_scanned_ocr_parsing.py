@@ -1,4 +1,6 @@
-from src.ingest.pdf_scanned import _parse_ocr_json
+import os
+
+from src.ingest.pdf_scanned import _parse_ocr_json, _tile_grid
 
 
 def test_valid_complete_json_parses_normally():
@@ -36,3 +38,17 @@ def test_non_json_prose_response_is_flagged_not_crashed():
     items, was_truncated = _parse_ocr_json(raw)
     assert was_truncated is True
     assert items == []
+
+
+def test_tile_grid_default_and_parsing(monkeypatch):
+    monkeypatch.delenv("VISION_OCR_TILE_GRID", raising=False)
+    assert _tile_grid() == (3, 3)
+
+    monkeypatch.setenv("VISION_OCR_TILE_GRID", "2x4")
+    assert _tile_grid() == (2, 4)
+
+    monkeypatch.setenv("VISION_OCR_TILE_GRID", "1x1")
+    assert _tile_grid() == (1, 1)
+
+    monkeypatch.setenv("VISION_OCR_TILE_GRID", "garbage")
+    assert _tile_grid() == (3, 3)  # falls back to default on bad input
