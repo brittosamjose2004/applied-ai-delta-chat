@@ -1,7 +1,7 @@
-"""Render a delta as a machine-parseable JSON artifact plus two
-human-readable formats (Markdown and HTML). All three are written to disk;
-the JSON is also what the chat retrieval layer indexes as a first-class
-source.
+"""Renders a delta as a machine-parseable JSON artifact plus two
+human-readable formats, Markdown and HTML. All three get written to disk
+on every run. The JSON version also gets indexed by the chat retrieval
+layer as a source document.
 """
 from __future__ import annotations
 
@@ -34,10 +34,10 @@ def to_json(pid_a: str, pid_b: str, items: list[DeltaItem]) -> dict:
 def to_markdown(pid_a: str, pid_b: str, items: list[DeltaItem]) -> str:
     counts = Counter(i.change_type for i in items)
     lines = [
-        f"# Delta Report — {pid_a} → {pid_b}",
+        f"# Delta Report: {pid_a} to {pid_b}",
         "",
         f"**Total changes:** {len(items)}  ",
-        f"Added: {counts.get('added', 0)} · Removed: {counts.get('removed', 0)} · Modified: {counts.get('modified', 0)}",
+        f"Added: {counts.get('added', 0)}, Removed: {counts.get('removed', 0)}, Modified: {counts.get('modified', 0)}",
         "",
     ]
 
@@ -49,8 +49,7 @@ def to_markdown(pid_a: str, pid_b: str, items: list[DeltaItem]) -> str:
         lines.append(f"## Page {page + 1}")
         lines.append("")
         for it in by_page[page]:
-            tag = {"added": "➕", "removed": "➖", "modified": "✏️"}[it.change_type]
-            lines.append(f"- {tag} **[{it.change_type}/{it.category}]** (id `{it.id[:8]}`, confidence {it.confidence:.2f}) — {it.description}")
+            lines.append(f"- [{it.change_type}/{it.category}] (id `{it.id[:8]}`, confidence {it.confidence:.2f}): {it.description}")
         lines.append("")
 
     return "\n".join(lines)
@@ -74,13 +73,13 @@ def to_html(pid_a: str, pid_b: str, items: list[DeltaItem]) -> str:
             rows.append(
                 f'<li><span class="tag" style="background:{color}22;color:{color};'
                 f'border:1px solid {color}55">{it.change_type}/{it.category}</span> '
-                f'<span class="conf">conf {it.confidence:.2f}</span> — {desc}</li>'
+                f'<span class="conf">conf {it.confidence:.2f}</span>: {desc}</li>'
             )
         rows.append("</ul>")
 
     return f"""<!doctype html>
 <html lang="en"><head><meta charset="utf-8">
-<title>Delta Report — {html_lib.escape(pid_a)} vs {html_lib.escape(pid_b)}</title>
+<title>Delta Report: {html_lib.escape(pid_a)} vs {html_lib.escape(pid_b)}</title>
 <style>
   body{{font:14px/1.6 -apple-system,Segoe UI,Roboto,sans-serif;background:#0f1115;color:#e7ecf3;
        max-width:900px;margin:0 auto;padding:24px}}
@@ -93,7 +92,7 @@ def to_html(pid_a: str, pid_b: str, items: list[DeltaItem]) -> str:
   .conf{{color:#9aa7b8;font-size:12px}}
 </style></head>
 <body>
-<h1>Delta Report — {html_lib.escape(pid_a)} → {html_lib.escape(pid_b)}</h1>
+<h1>Delta Report: {html_lib.escape(pid_a)} to {html_lib.escape(pid_b)}</h1>
 <div class="summary">
   <div class="chip">total {len(items)}</div>
   <div class="chip">added {counts.get('added', 0)}</div>

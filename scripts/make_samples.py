@@ -35,7 +35,7 @@ def build_rev_b():
 
     changes = []
 
-    # 1. MODIFIED — note 5 text changed
+    # 1. MODIFIED - note 5 text changed
     redact_and_replace(
         page,
         (35, 713, 189, 718),
@@ -49,7 +49,7 @@ def build_rev_b():
         "description": "Note 5 revised: oil change method changed from temporary hose arrangement to a permanent dedicated pump.",
     })
 
-    # 2. REMOVED — note 8 deleted (whited out, left blank)
+    # 2. REMOVED - note 8 deleted (whited out, left blank)
     rect8 = fitz.Rect(34, 731, 208, 737)
     page.add_redact_annot(rect8, fill=(1, 1, 1))
     page.apply_redactions()
@@ -61,7 +61,7 @@ def build_rev_b():
         "description": "Note 8 removed entirely (flame arrester note dropped from Rev B).",
     })
 
-    # 3. MODIFIED — instrument tag renumbered, two occurrences
+    # 3. MODIFIED - instrument tag renumbered, two occurrences
     for bbox in [(46.2, 35.7, 74.4, 41.5), (46.2, 76.4, 74.4, 82.2)]:
         redact_and_replace(page, bbox, "26-PIT-9099", fontsize=4.5)
     changes.append({
@@ -72,7 +72,7 @@ def build_rev_b():
         "description": "Instrument tag 26-PIT-9077 renumbered to 26-PIT-9099 (appears at 2 locations on the sheet).",
     })
 
-    # 4. MODIFIED — design pressure value changed
+    # 4. MODIFIED - design pressure value changed
     redact_and_replace(
         page,
         (253, 734, 450, 739),
@@ -87,7 +87,7 @@ def build_rev_b():
         "description": "Design pressure downstream of compressor increased from 257 BARG to 265 BARG.",
     })
 
-    # 5. ADDED — new note appended
+    # 5. ADDED - new note appended
     page.insert_text((253, 819), "35.", fontsize=4.3, fontname="helv", color=(0, 0, 0))
     page.insert_text((267, 819), "TEMPORARY BYPASS LINE ADDED PER FIELD CHANGE NOTICE FCN-0142.",
                       fontsize=4.3, fontname="helv", color=(0, 0, 0))
@@ -135,23 +135,23 @@ def build_scanned_variant():
 
 
 def write_provenance():
-    (OUT_DIR / "PROVENANCE.md").write_text(f"""# Sample pair 01 — Lift Gas Compressor P&ID
+    (OUT_DIR / "PROVENANCE.md").write_text(f"""# Sample pair 01 - Lift Gas Compressor P&ID
 
 **Source document:** `Lift Gas compressor-P&ID.pdf` (provided real P&ID, single sheet).
 
 **How this pair was synthesized** (per assignment guidance to synthesize pairs when a real
 revision history isn't available):
 
-- `rev_A_native.pdf` — unmodified copy of the source PDF. Treated as the base revision.
-- `rev_B_native.pdf` — same PDF with 5 deliberate, documented edits applied via PyMuPDF
+- `rev_A_native.pdf` - unmodified copy of the source PDF. Treated as the base revision.
+- `rev_B_native.pdf` - same PDF with 5 deliberate, documented edits applied via PyMuPDF
   (redact region + re-insert text at the same coordinates), representing a realistic revision:
   1 modified note, 1 removed note, 1 modified instrument tag (2 occurrences), 1 modified
   numeric value, 1 added note. Full details in `ground_truth_delta.json`.
-- `rev_A_scanned.pdf` — Rev A rasterized to a 200dpi PNG and re-embedded as an image-only PDF
+- `rev_A_scanned.pdf` - Rev A rasterized to a 200dpi PNG and re-embedded as an image-only PDF
   (no text layer), simulating a scanned/photographed document for the OCR ingestion path.
 
 **Ground truth:** `ground_truth_delta.json` is the labeled answer key used by the eval harness
-to score the delta engine (precision/recall/F1) — it was authored by construction (we made the
+to score the delta engine (precision/recall/F1) - it was authored by construction (we made the
 edits, so we know exactly what changed), not inferred after the fact.
 """, encoding="utf-8")
 

@@ -1,6 +1,6 @@
 """Delta engine: turns aligned element pairs into a structured, typed,
-located, confidence-scored delta. Deliberately deterministic — no LLM in
-this path — so the structural output is reproducible run-to-run (the LLM's
+located, confidence-scored delta. Deliberately deterministic - no LLM in
+this path - so the structural output is reproducible run-to-run (the LLM's
 non-determinism is isolated to the chat/answer layer only; see README).
 """
 from __future__ import annotations

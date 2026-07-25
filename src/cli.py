@@ -62,7 +62,7 @@ def cmd_chat(args):
         print("\nCitations:")
         for c in result["citations"]:
             origin = {"pid_a": "PID A", "pid_b": "PID B", "delta_report": "Delta Report"}[c["source"]]
-            print(f"  [{c['tag']}] {origin} p.{c['page']+1} — {c['text'][:70]}")
+            print(f"  [{c['tag']}] {origin} p.{c['page']+1} - {c['text'][:70]}")
         print(f"\n(trace: {trace.request_id})")
 
     if args.ask:

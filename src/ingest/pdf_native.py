@@ -1,5 +1,5 @@
 """Native (born-digital) PDF adapter. Extracts the real text/vector layer
-directly — no OCR needed. Groups words into lines and classifies each line
+directly - no OCR needed. Groups words into lines and classifies each line
 into a coarse element_type using cheap regex heuristics (good enough for a
 P&ID sheet; a real system would use layout/vendor conventions)."""
 from __future__ import annotations

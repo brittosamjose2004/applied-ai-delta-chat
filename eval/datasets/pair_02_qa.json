@@ -58,7 +58,7 @@
     },
     {
       "question": "Did note 1 change between the two revisions?",
-      "expected": "No, it's unchanged — drain valve manual operation.",
+      "expected": "No, it's unchanged - drain valve manual operation.",
       "expected_source_contains": "DRAIN VALVE MANUAL OPERATION"
     },
     {

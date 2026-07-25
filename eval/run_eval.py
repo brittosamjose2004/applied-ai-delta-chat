@@ -2,7 +2,7 @@
 
 Prints a scorecard: delta precision/recall/F1 per sample pair, plus chat
 correctness/groundedness if ANTHROPIC_API_KEY is set (skipped, visibly and
-honestly, if not — no fake numbers).
+honestly, if not - no fake numbers).
 """
 from __future__ import annotations
 
@@ -51,11 +51,11 @@ def run_delta_eval():
         if score.missed_ground_truth:
             print("  MISSED (false negatives):")
             for m in score.missed_ground_truth:
-                print(f"    - [{m['type']}] {m.get('description')}")
+                print(f"   - [{m['type']}] {m.get('description')}")
         if score.unmatched_predictions:
             print("  SPURIOUS (false positives):")
             for u in score.unmatched_predictions:
-                print(f"    - [{u['type']}] before={u['before']!r} after={u['after']!r}")
+                print(f"   - [{u['type']}] before={u['before']!r} after={u['after']!r}")
 
         results.append({"pair_id": gt["pair_id"], "precision": score.precision, "recall": score.recall, "f1": score.f1})
     return results
@@ -83,7 +83,7 @@ def run_retrieval_eval():
         if score.misses:
             print("  MISSED (expected fact not in top-8 retrieved chunks):")
             for m in score.misses:
-                print(f"    - Q: {m['question']!r} expected to find: {m['expected_source_contains']!r}")
+                print(f"   - Q: {m['question']!r} expected to find: {m['expected_source_contains']!r}")
         results.append({"pair_id": data["pair_id"], "recall_at_8": score.recall_at_k})
     return results
 

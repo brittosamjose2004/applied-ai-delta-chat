@@ -1,10 +1,10 @@
 """Scanned/raster PDF adapter. No reliable text layer, so recovery uses a
 vision LLM instead of a classic OCR binary (this environment has no
 Tesseract install, and a vision model additionally recovers coarse layout
-without a separate detector) — see README for the trade-off discussion.
+without a separate detector) - see README for the trade-off discussion.
 
 OCR goes through the same provider-agnostic LlmClient.complete_vision()
-used by chat, via default_client()'s fallback chain — not hardcoded to one
+used by chat, via default_client()'s fallback chain - not hardcoded to one
 provider. A provider without vision support (e.g. the NIM model configured
 here) raises NotImplementedError, which FallbackLlmClient treats like any
 other failure and skips to the next provider.
@@ -73,7 +73,7 @@ class ScannedPdfAdapter(FormatAdapter):
     def _ocr_page_tiled(self, pix, page_w: float, page_h: float) -> list[TextElement]:
         """Split the page into a grid of tiles and OCR each separately, then
         merge with bbox offsets. A dense P&ID sheet (~875 text elements)
-        blows past a single call's token budget (see git history / README —
+        blows past a single call's token budget (see git history / README - 
         this used to just silently drop most of the page); each tile has
         far fewer elements, so it completes without truncating."""
         from PIL import Image
@@ -119,7 +119,7 @@ class ScannedPdfAdapter(FormatAdapter):
         was_truncated = False
         last_output_tokens = 0
         last_provider = "unknown"
-        # One retry if the first attempt salvaged nothing at all — sampling
+        # One retry if the first attempt salvaged nothing at all - sampling
         # variance on where a dense region gets cut off means a second
         # attempt sometimes clears a truncation point earlier.
         for attempt in range(2):
@@ -133,7 +133,7 @@ class ScannedPdfAdapter(FormatAdapter):
 
         if was_truncated:
             # Bad/incomplete OCR is exactly the failure category the spec calls
-            # out by name — surface it loudly, don't silently return an empty
+            # out by name - surface it loudly, don't silently return an empty
             # region. An extremely dense tile can still exceed max_tokens;
             # salvaging the complete elements we did get beats discarding
             # everything.

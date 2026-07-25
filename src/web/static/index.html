@@ -39,7 +39,7 @@
 <body>
 <div class="wrap">
   <h1>delta-chat</h1>
-  <p class="sub">Document delta &amp; grounded chat — minimal served UI over the same pipeline the CLI uses.</p>
+  <p class="sub">Document delta &amp; grounded chat - minimal served UI over the same pipeline the CLI uses.</p>
 
   <div class="card">
     <div class="row">
@@ -114,7 +114,7 @@ function renderReport(data) {
   el.innerHTML = data.changes.map(c => `
     <div class="change">
       <span class="tag ${c.change_type}">${c.change_type}/${c.category}</span>
-      conf ${c.confidence.toFixed(2)} — ${escapeHtml(c.description)}
+      conf ${c.confidence.toFixed(2)} - ${escapeHtml(c.description)}
     </div>`).join('');
 }
 

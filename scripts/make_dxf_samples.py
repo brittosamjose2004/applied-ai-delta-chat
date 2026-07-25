@@ -66,7 +66,7 @@ def main():
     }, indent=2))
 
     (OUT_DIR / "PROVENANCE.md").write_text(
-        "# Sample pair 02 — synthetic DXF\n\n"
+        "# Sample pair 02 - synthetic DXF\n\n"
         "No real DWG/DXF sample was available, so this pair is fully synthetic: "
         "built directly with `ezdxf` (scripts/make_dxf_samples.py) as a small set of "
         "TEXT entities representing instrument tags and notes, edited between "

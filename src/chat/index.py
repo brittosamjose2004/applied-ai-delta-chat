@@ -21,7 +21,7 @@ TOKEN_RE = re.compile(r"[A-Za-z0-9]+")
 
 # Generic "what changed?" style questions (the assignment's own example
 # query) share almost no vocabulary with delta-report text ("Modified tag:
-# ..."), so plain BM25 ranks them low or misses them entirely — verified
+# ..."), so plain BM25 ranks them low or misses them entirely - verified
 # live: "what changed on this sheet?" was retrieving unrelated unchanged
 # PID content and the LLM concluded (wrongly) that nothing changed. This
 # regex detects that question intent and forces delta-report chunks to the
@@ -80,7 +80,7 @@ class RetrievalIndex:
 
 
 ROW_Y_TOLERANCE = 3.0   # points; elements within this vertical band are candidates for the same row
-ROW_X_GAP_MAX = 60.0    # points; only merge elements this close horizontally — a real
+ROW_X_GAP_MAX = 60.0    # points; only merge elements this close horizontally - a real
                         # label->value gap measured ~12pt; unrelated same-row content
                         # elsewhere on a wide P&ID sheet resumes at 69pt+ gaps (verified
                         # live against the actual equipment table)
@@ -88,7 +88,7 @@ ROW_X_GAP_MAX = 60.0    # points; only merge elements this close horizontally �
 
 def _row_chunks(source: str, doc: CanonicalDocument) -> list[Chunk]:
     """P&ID equipment tables put a label ("DUTY") and its value ("776 kW")
-    in separate columns of the same visual row — two separate TextElements
+    in separate columns of the same visual row - two separate TextElements
     with near-identical y but zero vocabulary overlap. A question like
     "what is the duty of the compressor?" matches the label chunk on BM25
     but the value chunk never surfaces (verified live: 'DUTY' scored 13.77,
@@ -96,7 +96,7 @@ def _row_chunks(source: str, doc: CanonicalDocument) -> list[Chunk]:
     an extra chunk that joins adjacent same-row cells' text lets a query
     match on the label and retrieve the value in the same chunk.
 
-    Grouping by y alone is too coarse on a wide sheet — it pulls in
+    Grouping by y alone is too coarse on a wide sheet - it pulls in
     unrelated content from elsewhere in the same horizontal band (verified
     live: a naive y-only merge dragged in drip-pan piping codes hundreds of
     points away into the DUTY row). ROW_X_GAP_MAX additionally requires

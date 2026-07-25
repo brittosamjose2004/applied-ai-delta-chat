@@ -1,4 +1,4 @@
-"""Structured JSON logging with a correlation id — every log line is one
+"""Structured JSON logging with a correlation id - every log line is one
 JSON object, not free text, so it's grep/jq-able and joinable to a trace by
 request_id."""
 from __future__ import annotations

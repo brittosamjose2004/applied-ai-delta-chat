@@ -1,4 +1,4 @@
-"""Minimal served UI (bonus item) — a thin HTTP layer over the same
+"""Minimal served UI (bonus item) - a thin HTTP layer over the same
 pipeline functions the CLI calls (run_delta_pipeline / answer_question).
 No new business logic lives here; it's a rendering layer only.
 

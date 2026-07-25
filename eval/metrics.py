@@ -2,7 +2,7 @@
 
 Delta metrics: match predicted DeltaItems against a labeled ground-truth
 change list (same change_type + fuzzy text overlap on before/after), then
-compute precision/recall/F1 — did we find the real changes without
+compute precision/recall/F1 - did we find the real changes without
 inventing fake ones.
 
 Chat metrics: correctness (does the answer contain the expected fact) and
@@ -10,7 +10,7 @@ groundedness (does the answer only make claims traceable to a cited
 source) via LLM-as-judge, validated against a couple of hand-checked
 examples (see README for the validation note).
 
-Retrieval metrics: recall@k — independent of the LLM, does BM25 retrieval
+Retrieval metrics: recall@k - independent of the LLM, does BM25 retrieval
 surface the chunk containing the fact needed to answer each labeled
 question, within the top k results actually sent to the model.
 """
@@ -106,7 +106,7 @@ Return only the JSON object."""
 
 def judge_chat_answer(llm, question: str, expected: str, answer: str) -> dict:
     """LLM-as-judge. Requires an LlmClient (see src/chat/llm.py). Validated by
-    spot-checking judge output against 2 hand-labeled examples — see README."""
+    spot-checking judge output against 2 hand-labeled examples - see README."""
     import json
     prompt = JUDGE_PROMPT.format(question=question, expected=expected, answer=answer)
     resp = llm.complete(system="You are a strict, careful grading assistant.", user=prompt, max_tokens=200)
@@ -128,7 +128,7 @@ class RetrievalScore:
 def score_retrieval(index, qa_list: list[dict], k: int = 8) -> RetrievalScore:
     """For each QA item with an `expected_source_contains` substring, check
     whether any of the top-k BM25 hits actually contain it. No LLM involved
-    — this isolates retrieval quality from generation quality."""
+   - this isolates retrieval quality from generation quality."""
     hits, misses = 0, []
     scored = [qa for qa in qa_list if qa.get("expected_source_contains")]
     for qa in scored:

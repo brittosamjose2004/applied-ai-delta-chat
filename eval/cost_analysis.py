@@ -1,5 +1,5 @@
 """Cost/latency budget analysis (bonus). Aggregates every trace file written
-under TRACE_DIR (real, observed runs — not estimates) into per-stage latency
+under TRACE_DIR (real, observed runs - not estimates) into per-stage latency
 percentiles and a cost projection, so "is this affordable/fast enough at
 scale" has a real number behind it instead of a guess.
 
@@ -75,7 +75,7 @@ def analyze(traces: list[dict]) -> dict:
         "total_llm_calls": total_llm_calls,
         "avg_cost_per_llm_call_usd": avg_cost_per_llm_call,
         "stage_latency_ms": stage_stats,
-        # Projections: purely `observed avg * N` — a first-order estimate, not a
+        # Projections: purely `observed avg * N` - a first-order estimate, not a
         # load-tested capacity number. Flagged as such in the printed report.
         "projected_cost_per_1000_llm_calls_usd": round(avg_cost_per_llm_call * 1000, 3),
     }

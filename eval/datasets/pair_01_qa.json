@@ -152,12 +152,12 @@
     },
     {
       "question": "How many notes were removed between the two revisions?",
-      "expected": "1 — the flame arrester note.",
+      "expected": "1 - the flame arrester note.",
       "expected_source_contains": "FLAME ARRESTER"
     },
     {
       "question": "How many notes were added between the two revisions?",
-      "expected": "1 — the note referencing the temporary bypass line and FCN-0142.",
+      "expected": "1 - the note referencing the temporary bypass line and FCN-0142.",
       "expected_source_contains": "FCN-0142"
     },
     {

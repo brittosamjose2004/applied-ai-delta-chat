@@ -1,4 +1,4 @@
-"""Content alignment between two revisions — the hard part of the delta
+"""Content alignment between two revisions - the hard part of the delta
 engine. Diffing is trivial once you know which element in B corresponds to
 which element in A; getting *that* right, when text moves, gets re-tagged,
 or shifts position slightly, is the actual problem.
@@ -6,7 +6,7 @@ or shifts position slightly, is the actual problem.
 Approach: score every same-page (elA, elB) candidate pair on a blend of text
 similarity and spatial proximity, then greedily assign 1:1 matches
 highest-score-first (a simple, deterministic stand-in for optimal bipartite
-matching — documented trade-off, see README). Unmatched elements on the A
+matching - documented trade-off, see README). Unmatched elements on the A
 side are removals; unmatched on the B side are additions.
 """
 from __future__ import annotations

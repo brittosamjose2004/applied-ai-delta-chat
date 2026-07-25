@@ -1,5 +1,5 @@
 """Lightweight homegrown tracer (documented choice in README: no external
-dependency needed to satisfy the requirement — every request writes a
+dependency needed to satisfy the requirement - every request writes a
 self-contained JSON trace file with per-stage timing and LLM telemetry).
 
 Usage:

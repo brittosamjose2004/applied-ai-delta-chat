@@ -1,5 +1,5 @@
 """Provider-agnostic LLM client. Swap providers by implementing this
-interface — nothing else in src/chat/ imports a provider SDK directly.
+interface - nothing else in src/chat/ imports a provider SDK directly.
 
 Providers implemented: Anthropic, Google Gemini (direct API or via Vertex
 AI), NVIDIA NIM (OpenAI-compatible endpoint). `default_client()` builds a
@@ -36,7 +36,7 @@ class LlmClient(ABC):
     def complete_vision(self, image_bytes: bytes, prompt: str, max_tokens: int = 4096) -> LlmResponse:
         """Vision-capable completion: image + text prompt -> text response.
         Used by the scanned-PDF OCR adapter. Not every provider supports
-        vision (e.g. the NIM model configured here doesn't) — those raise
+        vision (e.g. the NIM model configured here doesn't) - those raise
         NotImplementedError, which FallbackLlmClient treats like any other
         failure and skips to the next provider in the chain."""
         raise NotImplementedError(f"{self.provider_name} does not implement complete_vision")
@@ -142,7 +142,7 @@ class VertexGeminiClient(LlmClient):
 
 class GeminiClient(LlmClient):
     """Google Gemini via the direct Generative Language API (Google AI
-    Studio key), not Vertex — no GCP project/service-account needed, just
+    Studio key), not Vertex - no GCP project/service-account needed, just
     GEMINI_API_KEY. Simpler to set up than VertexGeminiClient below."""
     provider_name = "gemini_api"
 
@@ -189,7 +189,7 @@ class GeminiClient(LlmClient):
 
 
 class NvidiaNimClient(LlmClient):
-    """NVIDIA NIM — OpenAI-compatible endpoint, used here as a fallback
+    """NVIDIA NIM - OpenAI-compatible endpoint, used here as a fallback
     provider. Requires NVIDIA_NIM_API_KEY; NVIDIA_NIM_BASE_URL defaults to
     NVIDIA's hosted NIM catalog endpoint."""
     provider_name = "nvidia_nim"

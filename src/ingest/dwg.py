@@ -5,7 +5,7 @@ parsed for real via `ezdxf`: TEXT/MTEXT/DIMENSION entities become
 TextElements with their true rendered bounding box (via `ezdxf.bbox`).
 
 True binary .dwg still needs a proprietary converter (ODA File Converter or
-similar) to become DXF first — that conversion step isn't implemented here
+similar) to become DXF first - that conversion step isn't implemented here
 (no such binary is redistributable/available in this environment), so
 `.dwg` inputs raise a clear NotImplementedError while `.dxf` inputs are
 fully ingested through the same adapter interface as every other format.
@@ -32,7 +32,7 @@ class DwgAdapter(FormatAdapter):
             raise NotImplementedError(
                 "Binary .dwg ingestion needs a proprietary DWG->DXF conversion "
                 "step (e.g. the ODA File Converter), not available in this "
-                "environment. Convert to .dxf first — that path is fully "
+                "environment. Convert to .dxf first - that path is fully "
                 "implemented below via ezdxf."
             )
         return self._ingest_dxf(pid, path)
