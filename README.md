@@ -64,7 +64,14 @@ One-off question: `python -m src.cli chat --pid-a ... --path-a ... --pid-b ... -
   (all three written every run — the assignment's "Markdown/HTML + JSON" example, satisfied
   literally rather than just picking one human-readable format).
 - **Grounded chat** (`src/chat/`): BM25 keyword retrieval (`index.py`) over PID A, PID B,
-  and the delta report; a provider-agnostic `LlmClient` interface (`llm.py`) with three
+  and the delta report, with a targeted fix for generic "what changed?" style questions
+  (the assignment's own example query): plain BM25 shares almost no vocabulary between a
+  question like "what changed on this sheet?" and delta-report text like "Modified tag:
+  ...", so it was retrieving unrelated unchanged content and the LLM concluded — wrongly —
+  that nothing had changed. `has_change_intent()` detects this question shape and forces
+  delta-report chunks to the front of retrieval ranking regardless of lexical overlap;
+  covered by a regression test (`tests/test_retrieval_index.py`). A provider-agnostic
+  `LlmClient` interface (`llm.py`) with three
   implementations — Anthropic, Google Gemini (Vertex AI), NVIDIA NIM (OpenAI-compatible) —
   plus a `FallbackLlmClient` that tries them in order (Vertex → NIM → Anthropic) and moves
   to the next provider on any exception (timeout/quota/auth), logging each failure. Only

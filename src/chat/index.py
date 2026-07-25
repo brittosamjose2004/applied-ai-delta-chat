@@ -19,9 +19,27 @@ from src.delta.engine import DeltaItem
 
 TOKEN_RE = re.compile(r"[A-Za-z0-9]+")
 
+# Generic "what changed?" style questions (the assignment's own example
+# query) share almost no vocabulary with delta-report text ("Modified tag:
+# ..."), so plain BM25 ranks them low or misses them entirely — verified
+# live: "what changed on this sheet?" was retrieving unrelated unchanged
+# PID content and the LLM concluded (wrongly) that nothing changed. This
+# regex detects that question intent and forces delta-report chunks to the
+# front of the ranking, since for this question type they're always the
+# right source regardless of lexical overlap with the query.
+CHANGE_INTENT_RE = re.compile(
+    r"\bwhat\s+(has\s+)?chang|\bwhat.?s\s+(the\s+)?diff|\bany\s+chang|\bdid\s+(anything|it)\s+chang|"
+    r"\bdelta\b|\bdifferen(t|ce)\b|\bmodif(y|ied|ication)",
+    re.IGNORECASE,
+)
+
 
 def tokenize(text: str) -> list[str]:
     return TOKEN_RE.findall(text.lower())
+
+
+def has_change_intent(query: str) -> bool:
+    return bool(CHANGE_INTENT_RE.search(query))
 
 
 @dataclass
@@ -44,6 +62,19 @@ class RetrievalIndex:
         if not self._bm25:
             return []
         scores = self._bm25.get_scores(tokenize(query))
+
+        if has_change_intent(query):
+            # Force every delta-report chunk to outrank PID content, since a
+            # "what changed?" question is always answered by the delta
+            # report regardless of whether the query's wording happens to
+            # overlap with any individual change's description.
+            boosted = [
+                s + 1000.0 if c.source == "delta_report" else s
+                for c, s in zip(self.chunks, scores)
+            ]
+            ranked = sorted(zip(self.chunks, boosted), key=lambda x: x[1], reverse=True)
+            return [(c, float(s)) for c, s in ranked[:top_k]]
+
         ranked = sorted(zip(self.chunks, scores), key=lambda x: x[1], reverse=True)
         return [(c, float(s)) for c, s in ranked[:top_k] if s > 0]
 
