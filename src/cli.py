@@ -31,8 +31,9 @@ from src.pipeline import run_delta_pipeline
 def cmd_run(args):
     result = run_delta_pipeline(args.pid_a, args.path_a, args.pid_b, args.path_b, args.out)
     print(f"Delta: {len(result['items'])} changes")
-    print(f"Report (human-readable): {result['md_path']}")
-    print(f"Report (machine-readable): {result['json_path']}")
+    print(f"Report (Markdown): {result['md_path']}")
+    print(f"Report (HTML): {result['html_path']}")
+    print(f"Report (JSON): {result['json_path']}")
     print(f"Trace request_id: {result['request_id']}")
 
 

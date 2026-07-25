@@ -31,12 +31,15 @@ def run_delta_pipeline(pid_a: str, path_a: str, pid_b: str, path_b: str, out_dir
                   modified=sum(1 for i in items if i.change_type == "modified"))
 
         with trace.span("report") as s:
-            json_path, md_path = write_report(pid_a, pid_b, items, out_dir)
-            s.set(json_path=str(json_path), md_path=str(md_path))
+            json_path, md_path, html_path = write_report(pid_a, pid_b, items, out_dir)
+            s.set(json_path=str(json_path), md_path=str(md_path), html_path=str(html_path))
 
         log(logger, "info", "delta pipeline completed", request_id=trace.request_id,
             total_changes=len(items))
-        return {"request_id": trace.request_id, "items": items, "json_path": str(json_path), "md_path": str(md_path)}
+        return {
+            "request_id": trace.request_id, "items": items,
+            "json_path": str(json_path), "md_path": str(md_path), "html_path": str(html_path),
+        }
     except Exception as e:
         log(logger, "error", f"delta pipeline failed: {e}", request_id=trace.request_id)
         raise

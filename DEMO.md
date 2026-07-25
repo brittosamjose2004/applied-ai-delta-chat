@@ -10,9 +10,15 @@ $ make run
 {"ts": "...", "level": "INFO", "message": "delta pipeline started", "request_id": "...", "pid_a": "PID-A", "pid_b": "PID-B"}
 {"ts": "...", "level": "INFO", "message": "delta pipeline completed", "request_id": "...", "total_changes": 10}
 Delta: 10 changes
-Report: data\samples\pair_01_lift_gas_compressor\output\delta_report.md
+Report (Markdown): data\samples\pair_01_lift_gas_compressor\output\delta_report.md
+Report (HTML): data\samples\pair_01_lift_gas_compressor\output\delta_report.html
+Report (JSON): data\samples\pair_01_lift_gas_compressor\output\delta_report.json
 Trace request_id: 172da60f-d275-4d41-9c3e-5d02e228e2e5
 ```
+
+All three are written every run — Markdown and HTML are both human-readable (the assignment's
+"Markdown/HTML + JSON" example, satisfied literally), JSON is machine-parseable and what the
+chat retrieval layer indexes.
 
 Report excerpt (`delta_report.md`):
 

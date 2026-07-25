@@ -60,7 +60,9 @@ One-off question: `python -m src.cli chat --pid-a ... --path-a ... --pid-b ... -
 - **Delta engine** (`src/delta/`): `align.py` matches elements between revisions on a
   blend of text similarity + spatial proximity (greedy, highest-score-first — a simple
   stand-in for optimal bipartite matching), `engine.py` classifies matched/unmatched pairs
-  into added/removed/modified with confidence, `report.py` renders MD + JSON.
+  into added/removed/modified with confidence, `report.py` renders Markdown, HTML, and JSON
+  (all three written every run — the assignment's "Markdown/HTML + JSON" example, satisfied
+  literally rather than just picking one human-readable format).
 - **Grounded chat** (`src/chat/`): BM25 keyword retrieval (`index.py`) over PID A, PID B,
   and the delta report; a provider-agnostic `LlmClient` interface (`llm.py`) with three
   implementations — Anthropic, Google Gemini (Vertex AI), NVIDIA NIM (OpenAI-compatible) —
