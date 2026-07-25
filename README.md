@@ -33,13 +33,26 @@ make samples
 ## Run
 
 ```bash
-make run     # ingest -> delta -> report (data/samples/.../output/delta_report.{md,json,html})
+make run     # ingest -> delta -> report, defaults to the native PDF pair (data/samples/.../output/delta_report.{md,json,html})
 make chat    # interactive grounded chat REPL over PID A, PID B, and the delta report
 make markup  # overlay the delta as colored highlight boxes on a copy of PID B (bonus)
 make web     # served UI/dashboard at http://127.0.0.1:8000 (bonus)
 make eval    # scorecard: delta P/R/F1, chat correctness/groundedness, retrieval recall@k, cost/latency
 make test    # unit tests
 ```
+
+`make run` and `make chat` always point at the native PDF pair by default, since that's what
+the Makefile hardcodes. If you want to choose which sample pair to use instead (native PDF,
+scanned PDF, or DXF), run the underlying command without `--path-a`/`--path-b` and you'll get
+an interactive picker:
+
+```bash
+python -m src.cli run    # or: make pick
+python -m src.cli chat   # or: make pick-chat
+```
+
+It lists every sample pair actually present under `data/samples/`, you type a number, and it
+runs against that pair, output path included.
 
 One-off question: `python -m src.cli chat --pid-a ... --path-a ... --pid-b ... --path-b ... --ask "what changed on the tag 26-PIT-9077?"`
 

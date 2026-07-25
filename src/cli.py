@@ -1,4 +1,4 @@
-"""Single entrypoint: `python -m src.cli run|chat`
+"""Single entrypoint: `python -m src.cli run|chat|markup`
 
   run  --pid-a ... --path-a ... --pid-b ... --path-b ... --out ...
        ingests both PIDs, computes the delta, writes the report.
@@ -10,12 +10,15 @@
   markup --pid-a ... --path-a ... --pid-b ... --path-b ... --out ...
        ingests both PIDs, computes the delta, overlays it as colored
        highlight boxes on a copy of PID B (bonus deliverable).
+
+If --path-a/--path-b are left out, each command prompts you to pick from
+the sample pairs found under data/samples/ (native PDF, scanned PDF, DXF),
+so you don't have to remember or type the exact file paths.
 """
 from __future__ import annotations
 
 import argparse
-import json
-import os
+from pathlib import Path
 
 from dotenv import load_dotenv
 
@@ -27,10 +30,77 @@ from src.markup.overlay import UnsupportedMarkupFormatError, render_markup
 from src.observability.tracing import Trace
 from src.pipeline import run_delta_pipeline
 
+SAMPLES_DIR = Path(__file__).resolve().parents[1] / "data" / "samples"
+
+# (label, filename for rev A, filename for rev B)
+PAIR_VARIANTS = [
+    ("native PDF", "rev_A_native.pdf", "rev_B_native.pdf"),
+    ("scanned PDF (vision OCR, slower)", "rev_A_scanned.pdf", "rev_B_scanned.pdf"),
+    ("DXF", "rev_A.dxf", "rev_B.dxf"),
+]
+
+
+def discover_pairs() -> list[tuple[str, Path, Path]]:
+    """Scans data/samples/*/ for the known rev_A/rev_B naming patterns and
+    returns every pair that actually exists on disk, labeled by format."""
+    found = []
+    if not SAMPLES_DIR.exists():
+        return found
+    for pair_dir in sorted(SAMPLES_DIR.iterdir()):
+        if not pair_dir.is_dir():
+            continue
+        for label, name_a, name_b in PAIR_VARIANTS:
+            path_a, path_b = pair_dir / name_a, pair_dir / name_b
+            if path_a.exists() and path_b.exists():
+                found.append((f"{pair_dir.name} ({label})", path_a, path_b))
+    return found
+
+
+def prompt_for_pair() -> tuple[str, str]:
+    """Interactive picker used when --path-a/--path-b aren't given on the
+    command line. Lists every sample pair actually present on disk so you
+    pick a format on purpose instead of guessing which file a bare command
+    happens to default to."""
+    pairs = discover_pairs()
+    if not pairs:
+        raise SystemExit(
+            "No sample pairs found under data/samples/. Pass --path-a and "
+            "--path-b explicitly, or run `python scripts/make_samples.py` "
+            "first."
+        )
+
+    print("Which document pair do you want to use?\n")
+    for i, (label, path_a, path_b) in enumerate(pairs, start=1):
+        print(f"  {i}. {label}")
+        print(f"     A: {path_a}")
+        print(f"     B: {path_b}")
+    print()
+
+    while True:
+        choice = input(f"Enter a number (1-{len(pairs)}): ").strip()
+        if choice.isdigit() and 1 <= int(choice) <= len(pairs):
+            _, path_a, path_b = pairs[int(choice) - 1]
+            return str(path_a), str(path_b)
+        print("Not a valid choice, try again.")
+
+
+def _resolve_paths(args):
+    """If both paths were passed on the command line, use them as-is.
+    Otherwise fall back to the interactive picker."""
+    if args.path_a and args.path_b:
+        return args.path_a, args.path_b
+    return prompt_for_pair()
+
+
+def _default_out(path_a: str) -> str:
+    return str(Path(path_a).resolve().parent / "output")
+
 
 def cmd_run(args):
-    result = run_delta_pipeline(args.pid_a, args.path_a, args.pid_b, args.path_b, args.out)
-    print(f"Delta: {len(result['items'])} changes")
+    path_a, path_b = _resolve_paths(args)
+    out = args.out or _default_out(path_a)
+    result = run_delta_pipeline(args.pid_a, path_a, args.pid_b, path_b, out)
+    print(f"\nDelta: {len(result['items'])} changes")
     print(f"Report (Markdown): {result['md_path']}")
     print(f"Report (HTML): {result['html_path']}")
     print(f"Report (JSON): {result['json_path']}")
@@ -38,19 +108,22 @@ def cmd_run(args):
 
 
 def cmd_markup(args):
-    doc_a = ingest_pid(args.pid_a, args.path_a)
-    doc_b = ingest_pid(args.pid_b, args.path_b)
+    path_a, path_b = _resolve_paths(args)
+    out = args.out or str(Path(_default_out(path_a)) / "rev_B_markup.pdf")
+    doc_a = ingest_pid(args.pid_a, path_a)
+    doc_b = ingest_pid(args.pid_b, path_b)
     items = build_delta(doc_a, doc_b)
     try:
-        out_path = render_markup(args.path_b, items, args.out)
+        out_path = render_markup(path_b, items, out)
         print(f"Markup written: {out_path} ({len(items)} changes overlaid)")
     except UnsupportedMarkupFormatError as e:
         print(f"Markup skipped: {e}")
 
 
 def cmd_chat(args):
-    doc_a = ingest_pid(args.pid_a, args.path_a)
-    doc_b = ingest_pid(args.pid_b, args.path_b)
+    path_a, path_b = _resolve_paths(args)
+    doc_a = ingest_pid(args.pid_a, path_a)
+    doc_b = ingest_pid(args.pid_b, path_b)
     items = build_delta(doc_a, doc_b)
     index = build_index(doc_a, doc_b, items)
 
@@ -69,7 +142,7 @@ def cmd_chat(args):
         ask(args.ask)
         return
 
-    print("Grounded chat over PID A, PID B, and the delta report. Ctrl+C to exit.")
+    print("\nGrounded chat over PID A, PID B, and the delta report. Ctrl+C to exit.")
     while True:
         try:
             q = input("\n> ").strip()
@@ -86,27 +159,27 @@ def main():
     sub = parser.add_subparsers(dest="command", required=True)
 
     p_run = sub.add_parser("run")
-    p_run.add_argument("--pid-a", required=True)
-    p_run.add_argument("--path-a", required=True)
-    p_run.add_argument("--pid-b", required=True)
-    p_run.add_argument("--path-b", required=True)
-    p_run.add_argument("--out", required=True)
+    p_run.add_argument("--pid-a", default="PID-A")
+    p_run.add_argument("--path-a", default=None)
+    p_run.add_argument("--pid-b", default="PID-B")
+    p_run.add_argument("--path-b", default=None)
+    p_run.add_argument("--out", default=None)
     p_run.set_defaults(func=cmd_run)
 
     p_chat = sub.add_parser("chat")
-    p_chat.add_argument("--pid-a", required=True)
-    p_chat.add_argument("--path-a", required=True)
-    p_chat.add_argument("--pid-b", required=True)
-    p_chat.add_argument("--path-b", required=True)
+    p_chat.add_argument("--pid-a", default="PID-A")
+    p_chat.add_argument("--path-a", default=None)
+    p_chat.add_argument("--pid-b", default="PID-B")
+    p_chat.add_argument("--path-b", default=None)
     p_chat.add_argument("--ask", default=None)
     p_chat.set_defaults(func=cmd_chat)
 
     p_markup = sub.add_parser("markup")
-    p_markup.add_argument("--pid-a", required=True)
-    p_markup.add_argument("--path-a", required=True)
-    p_markup.add_argument("--pid-b", required=True)
-    p_markup.add_argument("--path-b", required=True)
-    p_markup.add_argument("--out", required=True)
+    p_markup.add_argument("--pid-a", default="PID-A")
+    p_markup.add_argument("--path-a", default=None)
+    p_markup.add_argument("--pid-b", default="PID-B")
+    p_markup.add_argument("--path-b", default=None)
+    p_markup.add_argument("--out", default=None)
     p_markup.set_defaults(func=cmd_markup)
 
     args = parser.parse_args()

@@ -1,4 +1,4 @@
-.PHONY: install samples run chat eval test web markup cost-report
+.PHONY: install samples run chat eval test web markup cost-report pick pick-chat
 
 install:
 	pip install -r requirements.txt
@@ -34,3 +34,11 @@ web:
 
 cost-report:
 	python -m eval.cost_analysis
+
+# Interactive: prompts you to pick which sample pair to use (native PDF,
+# scanned PDF, or DXF) instead of always defaulting to the native pair.
+pick:
+	python -m src.cli run
+
+pick-chat:
+	python -m src.cli chat
