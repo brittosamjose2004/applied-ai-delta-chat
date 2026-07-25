@@ -1,0 +1,193 @@
+{
+  "pid_a": "PID-A",
+  "pid_b": "PID-B",
+  "generated_at": "2026-07-25T09:17:30.228282+00:00",
+  "summary": {
+    "total_changes": 10,
+    "added": 5,
+    "removed": 0,
+    "modified": 5
+  },
+  "changes": [
+    {
+      "id": "f8f7c9ed-133d-4ed0-8872-468b4365abb6",
+      "change_type": "modified",
+      "category": "tag",
+      "page": 0,
+      "bbox": [
+        46.20000076293945,
+        35.662498474121094,
+        71.21099853515625,
+        41.84550094604492
+      ],
+      "before": "FROM 26-PIT-9077 IN 3RD",
+      "after": "26-PIT-9099",
+      "description": "Modified tag: \"FROM 26-PIT-9077 IN 3RD\" -> \"26-PIT-9099\"",
+      "confidence": 0.67,
+      "extra": {
+        "match_score": 0.67
+      }
+    },
+    {
+      "id": "d133f7d5-8a99-49dd-8223-76fbb40147b6",
+      "change_type": "added",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        30.479999542236328,
+        35.740108489990234,
+        46.217742919921875,
+        41.473350524902344
+      ],
+      "before": null,
+      "after": "FROM",
+      "description": "Added text: \"FROM\"",
+      "confidence": 0.9,
+      "extra": {}
+    },
+    {
+      "id": "c5768889-ae51-4298-bf5c-10da82e96be6",
+      "change_type": "added",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        74.36795806884766,
+        35.740108489990234,
+        91.65367889404297,
+        41.473350524902344
+      ],
+      "before": null,
+      "after": "IN 3RD",
+      "description": "Added text: \"IN 3RD\"",
+      "confidence": 0.9,
+      "extra": {}
+    },
+    {
+      "id": "1fa0a2da-46f4-4e47-86b9-798c2ae6d988",
+      "change_type": "modified",
+      "category": "tag",
+      "page": 0,
+      "bbox": [
+        46.20000076293945,
+        76.36251068115234,
+        71.21099853515625,
+        82.5455093383789
+      ],
+      "before": "FROM 26-PIT-9077 IN 3RD",
+      "after": "26-PIT-9099",
+      "description": "Modified tag: \"FROM 26-PIT-9077 IN 3RD\" -> \"26-PIT-9099\"",
+      "confidence": 0.67,
+      "extra": {
+        "match_score": 0.67
+      }
+    },
+    {
+      "id": "e33a3d22-4eb9-46b8-a213-121536666683",
+      "change_type": "added",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        30.479999542236328,
+        76.42010498046875,
+        46.217742919921875,
+        82.1533432006836
+      ],
+      "before": null,
+      "after": "FROM",
+      "description": "Added text: \"FROM\"",
+      "confidence": 0.9,
+      "extra": {}
+    },
+    {
+      "id": "0f6f74b9-5c7b-476a-9fd1-bf402a18b79a",
+      "change_type": "added",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        74.36795806884766,
+        76.42010498046875,
+        91.65367889404297,
+        82.1533432006836
+      ],
+      "before": null,
+      "after": "IN 3RD",
+      "description": "Added text: \"IN 3RD\"",
+      "confidence": 0.9,
+      "extra": {}
+    },
+    {
+      "id": "4a4cc5bb-369a-4204-af65-eedb33a308c2",
+      "change_type": "modified",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        35.0,
+        712.3775024414062,
+        199.13534545898438,
+        718.2857055664062
+      ],
+      "before": "OIL CHANGE BY USING TEMPORARY ARRANGEMENT WITH HOSES.",
+      "after": "OIL CHANGE BY USING PERMANENT ARRANGEMENT WITH DEDICATED PUMP.",
+      "description": "Modified text: \"OIL CHANGE BY USING TEMPORARY ARRANGEMENT WITH HOSES.\" -> \"OIL CHANGE BY USING PERMANENT ARRANGEMENT WITH DEDICATED PUMP.\"",
+      "confidence": 0.798,
+      "extra": {
+        "match_score": 0.798
+      }
+    },
+    {
+      "id": "a498370e-c5d8-4e48-8c55-181eae5b4e35",
+      "change_type": "modified",
+      "category": "note",
+      "page": 0,
+      "bbox": [
+        253.0,
+        733.3775024414062,
+        442.4841613769531,
+        739.2857055664062
+      ],
+      "before": "22.     DESIGN PRESSURE IN EXTERNAL SYSTEM DOWNSTREAM COMPRESSOR 257 BARG.",
+      "after": "22.     DESIGN PRESSURE IN EXTERNAL SYSTEM DOWNSTREAM COMPRESSOR 265 BARG.",
+      "description": "Modified note: \"22.     DESIGN PRESSURE IN EXTERNAL SYSTEM DOWNSTREAM COMPRESSOR 257 BARG.\" -> \"22.     DESIGN PRESSURE IN EXTERNAL SYSTEM DOWNSTREAM COMPRESSOR 265 BARG.\"",
+      "confidence": 0.99,
+      "extra": {
+        "match_score": 0.99
+      }
+    },
+    {
+      "id": "e0956ba4-c696-4b6a-b6b9-f92e47ae8721",
+      "change_type": "added",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        253.0,
+        814.3775024414062,
+        258.97698974609375,
+        820.2857055664062
+      ],
+      "before": null,
+      "after": "35.",
+      "description": "Added text: \"35.\"",
+      "confidence": 0.9,
+      "extra": {}
+    },
+    {
+      "id": "f07494ee-5a5c-4d20-abef-63d1a7c895c9",
+      "change_type": "modified",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        267.0,
+        814.3775024414062,
+        422.3120422363281,
+        820.2857055664062
+      ],
+      "before": "FLAME ARRESTER INCLUDES FLAME FILTER AND LOCATED AT END OF PIPE.",
+      "after": "TEMPORARY BYPASS LINE ADDED PER FIELD CHANGE NOTICE FCN-0142.",
+      "description": "Modified text: \"FLAME ARRESTER INCLUDES FLAME FILTER AND LOCATED AT END OF PIPE.\" -> \"TEMPORARY BYPASS LINE ADDED PER FIELD CHANGE NOTICE FCN-0142.\"",
+      "confidence": 0.43,
+      "extra": {
+        "match_score": 0.43
+      }
+    }
+  ]
+}

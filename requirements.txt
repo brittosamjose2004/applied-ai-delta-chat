@@ -1,0 +1,12 @@
+anthropic>=0.83
+google-genai>=1.6
+openai>=1.0
+fastapi>=0.110
+uvicorn>=0.30
+pymupdf>=1.24
+pdfplumber>=0.11
+ezdxf>=1.3
+pillow>=10.0
+rank-bm25>=0.2
+python-dotenv>=1.2
+pytest>=8.0

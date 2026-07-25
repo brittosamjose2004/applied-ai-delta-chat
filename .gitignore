@@ -1,0 +1,12 @@
+.env
+secrets/
+__pycache__/
+*.pyc
+.venv/
+venv/
+traces/
+*.egg-info/
+.chroma/
+.DS_Store
+web.log
+*.log

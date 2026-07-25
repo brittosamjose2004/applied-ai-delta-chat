@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>delta-chat</title>
+<style>
+  :root{ --bg:#0f1115; --panel:#161a21; --ink:#e7ecf3; --mut:#9aa7b8; --line:#2a323e; --brand:#4c8dff; --ok:#2fbf71; --bad:#ef5d5d; }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.5 -apple-system,Segoe UI,Roboto,sans-serif}
+  .wrap{max-width:1000px;margin:0 auto;padding:24px}
+  h1{font-size:20px;margin:0 0 4px}
+  .sub{color:var(--mut);margin:0 0 20px}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px;margin-bottom:16px}
+  label{display:block;font-size:12px;color:var(--mut);margin:8px 0 3px}
+  input[type=text]{width:100%;background:#0b0d11;border:1px solid var(--line);color:var(--ink);padding:7px 9px;border-radius:6px;font-size:13px}
+  button{background:var(--brand);color:#fff;border:0;padding:8px 14px;border-radius:6px;cursor:pointer;font-size:13px;margin-top:10px}
+  button:hover{opacity:.9}
+  button:disabled{opacity:.5;cursor:not-allowed}
+  .summary{display:flex;gap:10px;margin:10px 0}
+  .chip{background:#212936;border:1px solid var(--line);border-radius:8px;padding:6px 10px;font-size:12.5px}
+  .changes{max-height:340px;overflow:auto}
+  .change{border-bottom:1px solid var(--line);padding:8px 0;font-size:13px}
+  .tag{font-size:11px;font-weight:600;padding:2px 6px;border-radius:5px;margin-right:6px}
+  .added{background:rgba(47,191,113,.15);color:#8ee6b4}
+  .removed{background:rgba(239,93,93,.15);color:#ff9a9a}
+  .modified{background:rgba(76,141,255,.15);color:#a9c7ff}
+  .chatlog{height:340px;overflow-y:auto;border:1px solid var(--line);border-radius:8px;padding:10px;background:#0b0d11;margin-bottom:10px}
+  .msg{margin:8px 0}
+  .msg .who{font-size:11px;color:var(--mut);margin-bottom:2px}
+  .msg .text{white-space:pre-wrap}
+  .cite{font-size:11.5px;color:var(--mut);margin-top:4px}
+  .chatinput{display:flex;gap:8px}
+  .chatinput input{flex:1}
+  .status{font-size:12px;color:var(--mut);margin-top:6px}
+  .err{color:var(--bad)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>delta-chat</h1>
+  <p class="sub">Document delta &amp; grounded chat — minimal served UI over the same pipeline the CLI uses.</p>
+
+  <div class="card">
+    <div class="row">
+      <div>
+        <label>PID A id</label><input type="text" id="pidA" value="PID-A">
+        <label>PID A path</label><input type="text" id="pathA" value="data/samples/pair_01_lift_gas_compressor/rev_A_native.pdf">
+      </div>
+      <div>
+        <label>PID B id</label><input type="text" id="pidB" value="PID-B">
+        <label>PID B path</label><input type="text" id="pathB" value="data/samples/pair_01_lift_gas_compressor/rev_B_native.pdf">
+      </div>
+    </div>
+    <button id="loadBtn" onclick="loadDelta()">Compute delta &amp; load chat</button>
+    <div class="status" id="loadStatus"></div>
+  </div>
+
+  <div class="row">
+    <div class="card">
+      <h3>Delta report</h3>
+      <div class="summary" id="summary"></div>
+      <div class="changes" id="changes"></div>
+    </div>
+
+    <div class="card">
+      <h3>Grounded chat</h3>
+      <div class="chatlog" id="chatlog"></div>
+      <div class="chatinput">
+        <input type="text" id="question" placeholder="e.g. what changed with tag 26-PIT-9077?" onkeydown="if(event.key==='Enter') ask()">
+        <button onclick="ask()" id="askBtn">Ask</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+async function loadDelta() {
+  const btn = document.getElementById('loadBtn');
+  const status = document.getElementById('loadStatus');
+  btn.disabled = true;
+  status.textContent = 'Ingesting + computing delta...';
+  status.className = 'status';
+  try {
+    const resp = await fetch('/api/delta', {
+      method: 'POST', headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        pid_a: document.getElementById('pidA').value,
+        path_a: document.getElementById('pathA').value,
+        pid_b: document.getElementById('pidB').value,
+        path_b: document.getElementById('pathB').value,
+      })
+    });
+    const data = await resp.json();
+    if (!resp.ok) throw new Error(JSON.stringify(data));
+    renderReport(data);
+    status.textContent = `Loaded. request_id=${data.request_id}`;
+  } catch (e) {
+    status.textContent = 'Error: ' + e.message;
+    status.className = 'status err';
+  } finally {
+    btn.disabled = false;
+  }
+}
+
+function renderReport(data) {
+  const s = data.summary;
+  document.getElementById('summary').innerHTML = `
+    <div class="chip">total ${s.total_changes}</div>
+    <div class="chip">added ${s.added}</div>
+    <div class="chip">removed ${s.removed}</div>
+    <div class="chip">modified ${s.modified}</div>`;
+  const el = document.getElementById('changes');
+  el.innerHTML = data.changes.map(c => `
+    <div class="change">
+      <span class="tag ${c.change_type}">${c.change_type}/${c.category}</span>
+      conf ${c.confidence.toFixed(2)} — ${escapeHtml(c.description)}
+    </div>`).join('');
+}
+
+async function ask() {
+  const input = document.getElementById('question');
+  const q = input.value.trim();
+  if (!q) return;
+  const log = document.getElementById('chatlog');
+  log.innerHTML += `<div class="msg"><div class="who">you</div><div class="text">${escapeHtml(q)}</div></div>`;
+  input.value = '';
+  log.scrollTop = log.scrollHeight;
+  document.getElementById('askBtn').disabled = true;
+  try {
+    const resp = await fetch('/api/chat', {
+      method: 'POST', headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({question: q})
+    });
+    const data = await resp.json();
+    if (data.error) {
+      log.innerHTML += `<div class="msg err"><div class="who">system</div><div class="text">${escapeHtml(data.error)}</div></div>`;
+    } else {
+      const cites = (data.citations || []).map(c => `[${c.tag}] ${c.source} p.${c.page+1}`).join(' · ');
+      log.innerHTML += `<div class="msg"><div class="who">assistant (request_id ${data.request_id})</div><div class="text">${escapeHtml(data.answer)}</div><div class="cite">${escapeHtml(cites)}</div></div>`;
+    }
+  } catch (e) {
+    log.innerHTML += `<div class="msg err">Error: ${escapeHtml(e.message)}</div>`;
+  } finally {
+    document.getElementById('askBtn').disabled = false;
+    log.scrollTop = log.scrollHeight;
+  }
+}
+
+function escapeHtml(s) {
+  const d = document.createElement('div');
+  d.textContent = s ?? '';
+  return d.innerHTML;
+}
+</script>
+</body>
+</html>

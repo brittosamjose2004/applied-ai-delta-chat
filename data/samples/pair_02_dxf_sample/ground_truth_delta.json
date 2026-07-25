@@ -1,0 +1,42 @@
+{
+  "pair_id": "pair_02_dxf_sample",
+  "pid_a": "rev_A.dxf",
+  "pid_b": "rev_B.dxf",
+  "changes": [
+    {
+      "type": "modified",
+      "category": "tag",
+      "before": "26-PIT-4001 SUCTION PRESSURE",
+      "after": "26-PIT-4099 SUCTION PRESSURE",
+      "description": "Instrument tag renumbered 26-PIT-4001 -> 26-PIT-4099."
+    },
+    {
+      "type": "removed",
+      "category": "text",
+      "before": "26-TIT-4002 DISCHARGE TEMP",
+      "after": null,
+      "description": "Discharge temperature tag removed."
+    },
+    {
+      "type": "modified",
+      "category": "note",
+      "before": "NOTE 2: INSULATION PER SPEC 4471",
+      "after": "NOTE 2: INSULATION PER SPEC 4900",
+      "description": "Insulation spec number changed."
+    },
+    {
+      "type": "modified",
+      "category": "text",
+      "before": "VALVE 26-FV-4010 FAIL CLOSED",
+      "after": "VALVE 26-FV-4010 FAIL OPEN",
+      "description": "Valve fail-safe action changed from closed to open."
+    },
+    {
+      "type": "added",
+      "category": "note",
+      "before": null,
+      "after": "NOTE 3: NEW ISOLATION VALVE ADDED PER RFC-88",
+      "description": "New note added referencing RFC-88."
+    }
+  ]
+}

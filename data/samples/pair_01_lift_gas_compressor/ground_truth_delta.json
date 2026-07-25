@@ -1,0 +1,87 @@
+{
+  "pair_id": "pair_01_lift_gas_compressor",
+  "pid_a": "rev_A_native.pdf",
+  "pid_b": "rev_B_native.pdf",
+  "changes": [
+    {
+      "type": "modified",
+      "category": "note",
+      "page": 1,
+      "location": {
+        "bbox": [
+          35,
+          713,
+          189,
+          718
+        ]
+      },
+      "before": "OIL CHANGE BY USING TEMPORARY ARRANGEMENT WITH HOSES.",
+      "after": "OIL CHANGE BY USING PERMANENT ARRANGEMENT WITH DEDICATED PUMP.",
+      "description": "Note 5 revised: oil change method changed from temporary hose arrangement to a permanent dedicated pump."
+    },
+    {
+      "type": "removed",
+      "category": "note",
+      "page": 1,
+      "location": {
+        "bbox": [
+          34,
+          731,
+          208,
+          737
+        ]
+      },
+      "before": "FLAME ARRESTER INCLUDES FLAME FILTER AND LOCATED AT END OF PIPE.",
+      "after": null,
+      "description": "Note 8 removed entirely (flame arrester note dropped from Rev B)."
+    },
+    {
+      "type": "modified",
+      "category": "tag",
+      "page": 1,
+      "location": {
+        "bbox": [
+          46.2,
+          35.7,
+          74.4,
+          41.5
+        ]
+      },
+      "before": "26-PIT-9077",
+      "after": "26-PIT-9099",
+      "description": "Instrument tag 26-PIT-9077 renumbered to 26-PIT-9099 (appears at 2 locations on the sheet)."
+    },
+    {
+      "type": "modified",
+      "category": "dimension",
+      "page": 1,
+      "location": {
+        "bbox": [
+          253,
+          734,
+          450,
+          739
+        ]
+      },
+      "before": "22. DESIGN PRESSURE IN EXTERNAL SYSTEM DOWNSTREAM COMPRESSOR 257 BARG.",
+      "after": "22. DESIGN PRESSURE IN EXTERNAL SYSTEM DOWNSTREAM COMPRESSOR 265 BARG.",
+      "description": "Design pressure downstream of compressor increased from 257 BARG to 265 BARG."
+    },
+    {
+      "type": "added",
+      "category": "note",
+      "page": 1,
+      "location": {
+        "bbox": [
+          253,
+          814,
+          505,
+          820
+        ]
+      },
+      "before": null,
+      "after": "35. TEMPORARY BYPASS LINE ADDED PER FIELD CHANGE NOTICE FCN-0142.",
+      "description": "New note 35 added documenting a temporary bypass line per field change notice FCN-0142."
+    }
+  ]
+}

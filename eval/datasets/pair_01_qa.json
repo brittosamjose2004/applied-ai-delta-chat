@@ -1,0 +1,35 @@
+{
+  "pair_id": "pair_01_lift_gas_compressor",
+  "qa": [
+    {
+      "question": "What changed with instrument tag 26-PIT-9077?",
+      "expected": "It was renumbered/renamed to 26-PIT-9099.",
+      "expected_source_contains": "26-PIT-9099"
+    },
+    {
+      "question": "Did the design pressure downstream of the compressor change?",
+      "expected": "Yes, it increased from 257 BARG to 265 BARG.",
+      "expected_source_contains": "265 BARG"
+    },
+    {
+      "question": "What happened to note 5 about the oil change procedure?",
+      "expected": "It changed from a temporary hose arrangement to a permanent arrangement with a dedicated pump.",
+      "expected_source_contains": "DEDICATED PUMP"
+    },
+    {
+      "question": "Was any note removed between the two revisions?",
+      "expected": "Yes, the note about the flame arrester (flame filter located at end of pipe) was removed.",
+      "expected_source_contains": "FLAME ARRESTER"
+    },
+    {
+      "question": "Was anything added in the revised document about a bypass line?",
+      "expected": "Yes, a new note was added referencing a temporary bypass line per field change notice FCN-0142.",
+      "expected_source_contains": "FCN-0142"
+    },
+    {
+      "question": "What is note 3 about?",
+      "expected": "Atmospheric vent (unchanged between revisions).",
+      "expected_source_contains": "ATMOSPHERIC VENT"
+    }
+  ]
+}
