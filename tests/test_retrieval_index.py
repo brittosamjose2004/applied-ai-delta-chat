@@ -6,6 +6,10 @@ def test_change_intent_detection():
     assert has_change_intent("what's the difference between the two revisions?")
     assert has_change_intent("did anything change near the pump?")
     assert has_change_intent("any changes to note 5?")
+    # regression: plural "differences" was missed by an earlier, stricter regex
+    assert has_change_intent("summarize the differences between the two revisions")
+    assert has_change_intent("is there any difference between rev A and rev B?")
+    assert has_change_intent("compare the two revisions")
     assert not has_change_intent("what is the duty of the compressor?")
     assert not has_change_intent("who is the vendor?")
 

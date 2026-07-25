@@ -28,8 +28,8 @@ TOKEN_RE = re.compile(r"[A-Za-z0-9]+")
 # front of the ranking, since for this question type they're always the
 # right source regardless of lexical overlap with the query.
 CHANGE_INTENT_RE = re.compile(
-    r"\bwhat\s+(has\s+)?chang|\bwhat.?s\s+(the\s+)?diff|\bany\s+chang|\bdid\s+(anything|it)\s+chang|"
-    r"\bdelta\b|\bdifferen(t|ce)\b|\bmodif(y|ied|ication)",
+    r"\bwhat\s+(has\s+)?chang|\bany\s+chang|\bdid\s+(anything|it)\s+chang|"
+    r"\bdelta\b|\bdiffer\w*|\bmodif\w*|\bsummari[sz]e\b|\bcompar\w*|\bwhat.?s\s+new\b",
     re.IGNORECASE,
 )
 
