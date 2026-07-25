@@ -180,6 +180,28 @@ sample pair (`pair_02_dxf_sample`, a synthetic DXF built directly rather than vi
 redact+reinsert) scores **precision=1.0, recall=1.0, f1=1.0** with the identical delta
 engine code.
 
+**Scanned-PDF OCR at extreme document density (real, observed limitation):** running the
+full pipeline on `rev_A_scanned.pdf`/`rev_B_scanned.pdf` (the actual scanned-format sample,
+a 9192×6498px raster of the same dense sheet — ~875 real text elements) surfaced a genuine
+scaling limit: a single `complete_vision()` call maxes out at `VISION_OCR_MAX_TOKENS`
+(8192 by default) before enumerating anywhere near the full page as JSON, so OCR only
+recovers a partial subset (observed: 0-180 of ~875 elements, varying run to run by where
+the response happens to truncate). This was originally a **worse** bug — the truncated
+JSON failed to parse and was silently discarded into an empty page, which is exactly the
+"bad OCR gets swallowed" failure the assignment calls out by name as unacceptable. Fixed:
+`_parse_ocr_json()` now salvages every complete element from a truncated response instead
+of discarding the page, a truncation always logs a structured `WARNING` with the provider,
+token counts, and elements recovered (see `traces`/stdout logs — nothing is silent
+anymore), and one retry runs automatically if the first attempt salvages nothing.
+**Not fixed:** the underlying token-budget ceiling itself — a real production system would
+tile a dense page into regions, OCR each tile separately, and merge results, rather than
+ask one vision call to transcribe an entire dense sheet at once. Out of scope for this
+pass; documented here rather than silently left to look like it "just works." Bottom line:
+the scanned-PDF *format detection and ingestion seam* is fully real and end-to-end (per the
+acceptance criteria — "at least two of three formats"), and works well on moderately dense
+pages; this specific sheet is a stress case beyond what a single-call design was ever going
+to reliably complete, and that gap is now honestly visible instead of hidden.
+
 **Eval dataset size:** 50 hand-labeled Q&A pairs total (35 for `pair_01`, 15 for
 `pair_02_dxf_sample`) in `eval/datasets/`, covering four question types per pair: paraphrases
 of each known delta, static/unchanged-content questions (equipment table values, notes that

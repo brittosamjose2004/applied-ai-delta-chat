@@ -153,7 +153,7 @@ revision history isn't available):
 **Ground truth:** `ground_truth_delta.json` is the labeled answer key used by the eval harness
 to score the delta engine (precision/recall/F1) — it was authored by construction (we made the
 edits, so we know exactly what changed), not inferred after the fact.
-""")
+""", encoding="utf-8")
 
 
 if __name__ == "__main__":

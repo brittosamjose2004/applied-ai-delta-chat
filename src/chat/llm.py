@@ -33,6 +33,14 @@ class LlmClient(ABC):
     def complete(self, system: str, user: str, max_tokens: int = 1024) -> LlmResponse:
         ...
 
+    def complete_vision(self, image_bytes: bytes, prompt: str, max_tokens: int = 4096) -> LlmResponse:
+        """Vision-capable completion: image + text prompt -> text response.
+        Used by the scanned-PDF OCR adapter. Not every provider supports
+        vision (e.g. the NIM model configured here doesn't) — those raise
+        NotImplementedError, which FallbackLlmClient treats like any other
+        failure and skips to the next provider in the chain."""
+        raise NotImplementedError(f"{self.provider_name} does not implement complete_vision")
+
 
 class AnthropicClient(LlmClient):
     provider_name = "anthropic"
@@ -55,6 +63,27 @@ class AnthropicClient(LlmClient):
             model=self.model,
             input_tokens=resp.usage.input_tokens,
             output_tokens=resp.usage.output_tokens,
+            provider=self.provider_name,
+        )
+
+    def complete_vision(self, image_bytes: bytes, prompt: str, max_tokens: int = 4096) -> LlmResponse:
+        import base64
+        b64 = base64.b64encode(image_bytes).decode()
+        resp = self._client.messages.create(
+            model=self.model,
+            max_tokens=max_tokens,
+            messages=[{
+                "role": "user",
+                "content": [
+                    {"type": "image", "source": {"type": "base64", "media_type": "image/png", "data": b64}},
+                    {"type": "text", "text": prompt},
+                ],
+            }],
+        )
+        text = "".join(b.text for b in resp.content if b.type == "text")
+        return LlmResponse(
+            text=text, model=self.model,
+            input_tokens=resp.usage.input_tokens, output_tokens=resp.usage.output_tokens,
             provider=self.provider_name,
         )
 
@@ -94,6 +123,22 @@ class VertexGeminiClient(LlmClient):
             provider=self.provider_name,
         )
 
+    def complete_vision(self, image_bytes: bytes, prompt: str, max_tokens: int = 4096) -> LlmResponse:
+        from google.genai import types
+
+        resp = self._client.models.generate_content(
+            model=self.model,
+            contents=[types.Part.from_bytes(data=image_bytes, mime_type="image/png"), prompt],
+            config=types.GenerateContentConfig(max_output_tokens=max_tokens),
+        )
+        usage = resp.usage_metadata
+        return LlmResponse(
+            text=resp.text or "", model=self.model,
+            input_tokens=getattr(usage, "prompt_token_count", 0) or 0,
+            output_tokens=getattr(usage, "candidates_token_count", 0) or 0,
+            provider=self.provider_name,
+        )
+
 
 class GeminiClient(LlmClient):
     """Google Gemini via the direct Generative Language API (Google AI
@@ -121,6 +166,22 @@ class GeminiClient(LlmClient):
         return LlmResponse(
             text=resp.text or "",
             model=self.model,
+            input_tokens=getattr(usage, "prompt_token_count", 0) or 0,
+            output_tokens=getattr(usage, "candidates_token_count", 0) or 0,
+            provider=self.provider_name,
+        )
+
+    def complete_vision(self, image_bytes: bytes, prompt: str, max_tokens: int = 4096) -> LlmResponse:
+        from google.genai import types
+
+        resp = self._client.models.generate_content(
+            model=self.model,
+            contents=[types.Part.from_bytes(data=image_bytes, mime_type="image/png"), prompt],
+            config=types.GenerateContentConfig(max_output_tokens=max_tokens),
+        )
+        usage = resp.usage_metadata
+        return LlmResponse(
+            text=resp.text or "", model=self.model,
             input_tokens=getattr(usage, "prompt_token_count", 0) or 0,
             output_tokens=getattr(usage, "candidates_token_count", 0) or 0,
             provider=self.provider_name,
@@ -182,6 +243,17 @@ class FallbackLlmClient(LlmClient):
                 log(logger, "warning", f"LLM provider failed, falling back: {e}",
                     provider=client.provider_name, error=f"{type(e).__name__}: {e}")
         raise RuntimeError(f"All LLM providers in the fallback chain failed. Last error: {last_error}")
+
+    def complete_vision(self, image_bytes: bytes, prompt: str, max_tokens: int = 4096) -> LlmResponse:
+        last_error: Exception | None = None
+        for client in self._clients:
+            try:
+                return client.complete_vision(image_bytes, prompt, max_tokens=max_tokens)
+            except Exception as e:
+                last_error = e
+                log(logger, "warning", f"Vision-capable LLM provider failed, falling back: {e}",
+                    provider=client.provider_name, error=f"{type(e).__name__}: {e}")
+        raise RuntimeError(f"All LLM providers in the fallback chain failed vision OCR. Last error: {last_error}")
 
 
 def default_client() -> LlmClient:

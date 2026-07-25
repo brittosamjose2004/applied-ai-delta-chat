@@ -1,0 +1,3073 @@
+{
+  "pid_a": "PID-A",
+  "pid_b": "PID-B",
+  "generated_at": "2026-07-25T10:43:01.132985+00:00",
+  "summary": {
+    "total_changes": 180,
+    "added": 0,
+    "removed": 180,
+    "modified": 0
+  },
+  "changes": [
+    {
+      "id": "0e547e33-6e4a-4511-adf6-f722c50075ec",
+      "change_type": "removed",
+      "category": "tag",
+      "page": 0,
+      "bbox": [
+        95.961,
+        53.797,
+        248.17499999999998,
+        245.595
+      ],
+      "before": "FROM 26-PIT-9077 IN 3RD",
+      "after": null,
+      "description": "Removed tag: \"FROM 26-PIT-9077 IN 3RD\"",
+      "confidence": 0.698,
+      "extra": {}
+    },
+    {
+      "id": "cf9ed2c8-6e88-4a4d-9bb6-e0cb004ff28c",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        1383.162,
+        63.153,
+        1479.123,
+        187.12
+      ],
+      "before": "INSTRUMENT AIR",
+      "after": null,
+      "description": "Removed text: \"INSTRUMENT AIR\"",
+      "confidence": 0.664,
+      "extra": {}
+    },
+    {
+      "id": "c3e182b3-5a07-4c1e-9ec0-3db7b1aac6b0",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        1654.5,
+        63.153,
+        1714.0620000000001,
+        166.069
+      ],
+      "before": "NOTE 17",
+      "after": null,
+      "description": "Removed text: \"NOTE 17\"",
+      "confidence": 0.759,
+      "extra": {}
+    },
+    {
+      "id": "c5a84cad-a3ef-4bf2-b8e4-8ba1f36fc961",
+      "change_type": "removed",
+      "category": "dimension",
+      "page": 0,
+      "bbox": [
+        2078.052,
+        63.153,
+        2140.9230000000002,
+        138.001
+      ],
+      "before": "3\"X2\"",
+      "after": null,
+      "description": "Removed dimension: \"3\"X2\"\"",
+      "confidence": 0.542,
+      "extra": {}
+    },
+    {
+      "id": "82caa7f5-fe36-4820-9b8d-86c00b115be9",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        2329.536,
+        63.153,
+        2379.171,
+        130.984
+      ],
+      "before": "DUTY",
+      "after": null,
+      "description": "Removed text: \"DUTY\"",
+      "confidence": 0.692,
+      "extra": {}
+    },
+    {
+      "id": "133c0c1d-2121-4cbd-9a6f-f456b8259243",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        2445.351,
+        63.153,
+        2541.312,
+        364.884
+      ],
+      "before": "DISCHARGE / SUCTION OP. PRESS. (MAX)",
+      "after": null,
+      "description": "Removed text: \"DISCHARGE / SUCTION OP. PRESS. (MAX)\"",
+      "confidence": 0.698,
+      "extra": {}
+    },
+    {
+      "id": "037e1981-c87a-45dd-90ca-64f1604399bf",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        2637.273,
+        63.153,
+        2733.234,
+        357.867
+      ],
+      "before": "DISCHARGE / SUCTION DESIGN TEMP.",
+      "after": null,
+      "description": "Removed text: \"DISCHARGE / SUCTION DESIGN TEMP.\"",
+      "confidence": 0.698,
+      "extra": {}
+    },
+    {
+      "id": "b4739c30-c146-4f9d-8104-8b616671c261",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        2726.616,
+        63.153,
+        2786.178,
+        182.442
+      ],
+      "before": "MATERIAL",
+      "after": null,
+      "description": "Removed text: \"MATERIAL\"",
+      "confidence": 0.696,
+      "extra": {}
+    },
+    {
+      "id": "760da80f-44d3-4978-9556-c44c48fbb652",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        2792.796,
+        63.153,
+        2855.667,
+        196.476
+      ],
+      "before": "QUANTITY",
+      "after": null,
+      "description": "Removed text: \"QUANTITY\"",
+      "confidence": 0.697,
+      "extra": {}
+    },
+    {
+      "id": "a682f31f-c781-4406-9d17-4aed9e07dd97",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        3047.589,
+        63.153,
+        3117.078,
+        215.188
+      ],
+      "before": "VESSEL TRIM",
+      "after": null,
+      "description": "Removed text: \"VESSEL TRIM\"",
+      "confidence": 0.695,
+      "extra": {}
+    },
+    {
+      "id": "47d0c459-606e-47f8-a6d8-7426ee1567e6",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        132.36,
+        65.492,
+        198.54,
+        84.204
+      ],
+      "before": "9.",
+      "after": null,
+      "description": "Removed text: \"9.\"",
+      "confidence": 0.769,
+      "extra": {}
+    },
+    {
+      "id": "10411ff6-b336-443d-88e9-a9a8fcf5e51c",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        393.77099999999996,
+        65.492,
+        453.333,
+        105.255
+      ],
+      "before": "10.",
+      "after": null,
+      "description": "Removed text: \"10.\"",
+      "confidence": 0.764,
+      "extra": {}
+    },
+    {
+      "id": "9775400a-d26b-49ad-84c8-36be8c1aa77e",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        443.406,
+        65.492,
+        536.058,
+        245.595
+      ],
+      "before": "TO 3RD STAGE HP GAS",
+      "after": null,
+      "description": "Removed text: \"TO 3RD STAGE HP GAS\"",
+      "confidence": 0.716,
+      "extra": {}
+    },
+    {
+      "id": "ff76fb2e-7779-4531-8c89-b6621d627b68",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        466.56899999999996,
+        65.492,
+        585.693,
+        245.595
+      ],
+      "before": "26-PY-9077B",
+      "after": null,
+      "description": "Removed text: \"26-PY-9077B\"",
+      "confidence": 0.693,
+      "extra": {}
+    },
+    {
+      "id": "96e61ef1-4c00-414c-8411-ebb77fc79fd5",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        661.8000000000001,
+        65.492,
+        724.671,
+        102.916
+      ],
+      "before": "11.",
+      "after": null,
+      "description": "Removed text: \"11.\"",
+      "confidence": 0.765,
+      "extra": {}
+    },
+    {
+      "id": "fcf6f820-4383-47ad-80f0-22d14a71d3d6",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        794.16,
+        65.492,
+        857.0310000000001,
+        105.255
+      ],
+      "before": "12.",
+      "after": null,
+      "description": "Removed text: \"12.\"",
+      "confidence": 0.765,
+      "extra": {}
+    },
+    {
+      "id": "3d0141de-2853-4bc6-bbb1-59117399886d",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        923.2110000000001,
+        65.492,
+        982.7729999999999,
+        102.916
+      ],
+      "before": "13.",
+      "after": null,
+      "description": "Removed text: \"13.\"",
+      "confidence": 0.766,
+      "extra": {}
+    },
+    {
+      "id": "7945925c-e28c-4cdc-bb95-fc6a13cb495a",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        1002.627,
+        65.492,
+        1101.8970000000002,
+        243.256
+      ],
+      "before": "26-000004-001",
+      "after": null,
+      "description": "Removed text: \"26-000004-001\"",
+      "confidence": 0.638,
+      "extra": {}
+    },
+    {
+      "id": "9c6d5b2b-c985-40e3-a293-de9fd1bc9a59",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        1058.88,
+        65.492,
+        1118.442,
+        105.255
+      ],
+      "before": "14.",
+      "after": null,
+      "description": "Removed text: \"14.\"",
+      "confidence": 0.766,
+      "extra": {}
+    },
+    {
+      "id": "e5f82eb3-6823-4e77-9469-5c4a03e25eab",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        1181.3129999999999,
+        65.492,
+        1240.875,
+        105.255
+      ],
+      "before": "15.",
+      "after": null,
+      "description": "Removed text: \"15.\"",
+      "confidence": 0.766,
+      "extra": {}
+    },
+    {
+      "id": "1b465654-2961-4968-8b5d-4fffee8d922b",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        1224.33,
+        65.492,
+        1323.6000000000001,
+        189.459
+      ],
+      "before": "INSTRUMENT AIR",
+      "after": null,
+      "description": "Removed text: \"INSTRUMENT AIR\"",
+      "confidence": 0.664,
+      "extra": {}
+    },
+    {
+      "id": "ae5d7bb5-f700-429c-b611-0bbcadae4181",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        1465.887,
+        65.492,
+        1565.157,
+        271.324
+      ],
+      "before": "COOLING MEDIUM RETURN",
+      "after": null,
+      "description": "Removed text: \"COOLING MEDIUM RETURN\"",
+      "confidence": 0.698,
+      "extra": {}
+    },
+    {
+      "id": "1ff36acc-28bf-4046-9522-46ffcfca5b68",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        1502.286,
+        65.492,
+        1594.9379999999999,
+        245.595
+      ],
+      "before": "FROM MOTOR COOLING",
+      "after": null,
+      "description": "Removed text: \"FROM MOTOR COOLING\"",
+      "confidence": 0.698,
+      "extra": {}
+    },
+    {
+      "id": "c048de05-7a8f-46a0-a9f4-db81035bbb3e",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        1538.6850000000002,
+        65.492,
+        1631.337,
+        243.256
+      ],
+      "before": "40-900003-001",
+      "after": null,
+      "description": "Removed text: \"40-900003-001\"",
+      "confidence": 0.608,
+      "extra": {}
+    },
+    {
+      "id": "f813ac7e-3804-43a0-95eb-ea8a81832f04",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        1618.1009999999999,
+        65.492,
+        1677.663,
+        109.933
+      ],
+      "before": "2\"",
+      "after": null,
+      "description": "Removed text: \"2\"\"",
+      "confidence": 0.519,
+      "extra": {}
+    },
+    {
+      "id": "5d2183f4-bf83-44ac-9549-86eb03e804d3",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        1667.736,
+        65.492,
+        1723.989,
+        168.408
+      ],
+      "before": "NITROGEN",
+      "after": null,
+      "description": "Removed text: \"NITROGEN\"",
+      "confidence": 0.695,
+      "extra": {}
+    },
+    {
+      "id": "b3d42eae-bf9a-43c4-ab24-7ebb773c35da",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        1767.006,
+        65.492,
+        1862.9669999999999,
+        271.324
+      ],
+      "before": "COOLING MEDIUM RETURN",
+      "after": null,
+      "description": "Removed text: \"COOLING MEDIUM RETURN\"",
+      "confidence": 0.698,
+      "extra": {}
+    },
+    {
+      "id": "4fb4ef88-37da-4e1b-b64f-9a259f6f3a95",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        1790.169,
+        65.492,
+        1846.4220000000003,
+        109.933
+      ],
+      "before": "2\"",
+      "after": null,
+      "description": "Removed text: \"2\"\"",
+      "confidence": 0.524,
+      "extra": {}
+    },
+    {
+      "id": "7c02640a-6dba-4785-a3e4-22ef557f34b2",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        1803.4050000000002,
+        65.492,
+        1896.0569999999998,
+        259.629
+      ],
+      "before": "FROM LUBE OIL COOLERS",
+      "after": null,
+      "description": "Removed text: \"FROM LUBE OIL COOLERS\"",
+      "confidence": 0.698,
+      "extra": {}
+    },
+    {
+      "id": "9285c73e-831a-4104-9503-7736870272dc",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        1856.3490000000002,
+        65.492,
+        1949.001,
+        245.595
+      ],
+      "before": "40-900003-001",
+      "after": null,
+      "description": "Removed text: \"40-900003-001\"",
+      "confidence": 0.608,
+      "extra": {}
+    },
+    {
+      "id": "568b2dfd-42eb-40f1-8a91-a4524b47d0d2",
+      "change_type": "removed",
+      "category": "dimension",
+      "page": 0,
+      "bbox": [
+        1929.147,
+        65.492,
+        2001.945,
+        142.679
+      ],
+      "before": "3\"X2\"",
+      "after": null,
+      "description": "Removed dimension: \"3\"X2\"\"",
+      "confidence": 0.537,
+      "extra": {}
+    },
+    {
+      "id": "01080e83-5197-4ce7-a98e-f99a54f94751",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        1988.7089999999998,
+        65.492,
+        2081.361,
+        240.91699999999997
+      ],
+      "before": "COOLING MEDIUM",
+      "after": null,
+      "description": "Removed text: \"COOLING MEDIUM\"",
+      "confidence": 0.698,
+      "extra": {}
+    },
+    {
+      "id": "c61dde43-9152-4bf8-a408-4e2dc3d076dd",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        2087.979,
+        65.492,
+        2180.6310000000003,
+        245.595
+      ],
+      "before": "40-900003-001",
+      "after": null,
+      "description": "Removed text: \"40-900003-001\"",
+      "confidence": 0.607,
+      "extra": {}
+    },
+    {
+      "id": "50ee6d79-92b2-49aa-a01c-b9621f2d37ef",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        2207.103,
+        65.492,
+        2289.828,
+        229.222
+      ],
+      "before": "TAG NUMBER",
+      "after": null,
+      "description": "Removed text: \"TAG NUMBER\"",
+      "confidence": 0.702,
+      "extra": {}
+    },
+    {
+      "id": "25f86180-100d-4931-8c64-0930cf2566aa",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        2233.5750000000003,
+        65.492,
+        2289.828,
+        161.39100000000002
+      ],
+      "before": "SERVICE",
+      "after": null,
+      "description": "Removed text: \"SERVICE\"",
+      "confidence": 0.692,
+      "extra": {}
+    },
+    {
+      "id": "eeaca8a9-f4ab-425c-a799-58e8cb52ac4a",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        2382.48,
+        65.492,
+        2442.042,
+        198.81500000000003
+      ],
+      "before": "FLOW RATE",
+      "after": null,
+      "description": "Removed text: \"FLOW RATE\"",
+      "confidence": 0.693,
+      "extra": {}
+    },
+    {
+      "id": "b989edb3-f4c3-494d-89a6-987179dcd7be",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        2508.222,
+        65.492,
+        2604.183,
+        357.867
+      ],
+      "before": "DISCHARGE / SUCTION OP. TEMP.",
+      "after": null,
+      "description": "Removed text: \"DISCHARGE / SUCTION OP. TEMP.\"",
+      "confidence": 0.698,
+      "extra": {}
+    },
+    {
+      "id": "b1a99bb4-b49a-46f2-9206-54de79ba1730",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        2571.0930000000003,
+        65.492,
+        2670.3630000000003,
+        364.884
+      ],
+      "before": "DISCHARGE / SUCTION DESIGN PRESS. (MAX)",
+      "after": null,
+      "description": "Removed text: \"DISCHARGE / SUCTION DESIGN PRESS. (MAX)\"",
+      "confidence": 0.698,
+      "extra": {}
+    },
+    {
+      "id": "f3dc3930-5ccc-40ed-9691-5773c32c940f",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        2862.285,
+        65.492,
+        2921.847,
+        130.984
+      ],
+      "before": "TYPE",
+      "after": null,
+      "description": "Removed text: \"TYPE\"",
+      "confidence": 0.694,
+      "extra": {}
+    },
+    {
+      "id": "9f4b543b-8d53-4b8c-b2c7-a65b6285ae7c",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        102.579,
+        67.831,
+        373.91700000000003,
+        245.595
+      ],
+      "before": "COMPRESSOR DISCHARGE",
+      "after": null,
+      "description": "Removed text: \"COMPRESSOR DISCHARGE\"",
+      "confidence": 0.698,
+      "extra": {}
+    },
+    {
+      "id": "b6b7dbae-3755-452f-9e3e-d7c81bdfc195",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        132.36,
+        67.831,
+        208.467,
+        240.91699999999997
+      ],
+      "before": "STAGE HP GAS LIFT",
+      "after": null,
+      "description": "Removed text: \"STAGE HP GAS LIFT\"",
+      "confidence": 0.672,
+      "extra": {}
+    },
+    {
+      "id": "c14e7872-70b4-4c73-882f-38c2c82718fb",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        311.046,
+        67.831,
+        410.316,
+        243.256
+      ],
+      "before": "26-000006-001",
+      "after": null,
+      "description": "Removed text: \"26-000006-001\"",
+      "confidence": 0.607,
+      "extra": {}
+    },
+    {
+      "id": "f3704f5f-21d2-487d-96e6-c8fa927f59a0",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        466.56899999999996,
+        67.831,
+        519.513,
+        109.933
+      ],
+      "before": "LIFT",
+      "after": null,
+      "description": "Removed text: \"LIFT\"",
+      "confidence": 0.514,
+      "extra": {}
+    },
+    {
+      "id": "54a27215-ecc3-430a-b7b2-721ebc6f225e",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        562.5300000000001,
+        67.831,
+        684.963,
+        245.595
+      ],
+      "before": "COMPRESSOR ANTI-SURGE",
+      "after": null,
+      "description": "Removed text: \"COMPRESSOR ANTI-SURGE\"",
+      "confidence": 0.699,
+      "extra": {}
+    },
+    {
+      "id": "39e38713-7624-446c-ae2f-42bc2c02395f",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        602.2379999999999,
+        67.831,
+        727.98,
+        245.595
+      ],
+      "before": "VALVE, FV-9076",
+      "after": null,
+      "description": "Removed text: \"VALVE, FV-9076\"",
+      "confidence": 0.696,
+      "extra": {}
+    },
+    {
+      "id": "ef308145-7924-4086-b9f7-bfb9624af043",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        701.5079999999999,
+        67.831,
+        797.4689999999999,
+        245.595
+      ],
+      "before": "26-000006-001",
+      "after": null,
+      "description": "Removed text: \"26-000006-001\"",
+      "confidence": 0.635,
+      "extra": {}
+    },
+    {
+      "id": "7622fc80-180b-4c5c-956d-93bfc80b3c76",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        807.396,
+        67.831,
+        900.0480000000001,
+        245.595
+      ],
+      "before": "FROM 3RD STAGE HP",
+      "after": null,
+      "description": "Removed text: \"FROM 3RD STAGE HP\"",
+      "confidence": 0.698,
+      "extra": {}
+    },
+    {
+      "id": "e73b8c88-7d46-4813-b460-8616b7bd19eb",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        833.868,
+        67.831,
+        893.4300000000001,
+        130.984
+      ],
+      "before": "GAS LIFT",
+      "after": null,
+      "description": "Removed text: \"GAS LIFT\"",
+      "confidence": 0.598,
+      "extra": {}
+    },
+    {
+      "id": "f89eab8b-8dcd-4a82-b6cb-72c50994f74d",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        873.576,
+        67.831,
+        992.6999999999999,
+        245.595
+      ],
+      "before": "COMPRESSOR SUCTION",
+      "after": null,
+      "description": "Removed text: \"COMPRESSOR SUCTION\"",
+      "confidence": 0.699,
+      "extra": {}
+    },
+    {
+      "id": "39a521c1-1b69-4323-a75f-7db8712f0c00",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        909.975,
+        67.831,
+        1009.245,
+        163.73000000000002
+      ],
+      "before": "SCRUBBER",
+      "after": null,
+      "description": "Removed text: \"SCRUBBER\"",
+      "confidence": 0.693,
+      "extra": {}
+    },
+    {
+      "id": "83f64749-1787-4e99-af4b-61bc02101cb7",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        1240.875,
+        67.831,
+        1399.7069999999999,
+        245.595
+      ],
+      "before": "8\"-PV-26-9035-FC11S-08",
+      "after": null,
+      "description": "Removed text: \"8\"-PV-26-9035-FC11S-08\"",
+      "confidence": 0.712,
+      "extra": {}
+    },
+    {
+      "id": "0c022143-86e0-4cb8-92e3-34171199e3ba",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        1690.8990000000001,
+        67.831,
+        1776.9330000000002,
+        243.256
+      ],
+      "before": "64-900001-001",
+      "after": null,
+      "description": "Removed text: \"64-900001-001\"",
+      "confidence": 0.606,
+      "extra": {}
+    },
+    {
+      "id": "98f131e8-580a-4ab7-ab98-9187c21132c7",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        2018.49,
+        67.831,
+        2107.833,
+        243.256
+      ],
+      "before": "SUPPLY TO LUBE OIL",
+      "after": null,
+      "description": "Removed text: \"SUPPLY TO LUBE OIL\"",
+      "confidence": 0.698,
+      "extra": {}
+    },
+    {
+      "id": "3b12a7ee-1cd6-445a-a3a5-1dd617a94dcb",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        2051.58,
+        67.831,
+        2121.069,
+        152.035
+      ],
+      "before": "COOLERS",
+      "after": null,
+      "description": "Removed text: \"COOLERS\"",
+      "confidence": 0.694,
+      "extra": {}
+    },
+    {
+      "id": "fe7274af-d477-43d3-9209-4c5bd63a48f4",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        2925.156,
+        67.831,
+        2988.027,
+        177.76399999999998
+      ],
+      "before": "VENDOR",
+      "after": null,
+      "description": "Removed text: \"VENDOR\"",
+      "confidence": 0.695,
+      "extra": {}
+    },
+    {
+      "id": "9a00a88d-5a02-4ea0-989e-f9ef6b6ffc6b",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        823.941,
+        84.204,
+        893.4300000000001,
+        114.611
+      ],
+      "before": "3",
+      "after": null,
+      "description": "Removed text: \"3\"",
+      "confidence": 0.895,
+      "extra": {}
+    },
+    {
+      "id": "5274903a-db92-47ae-b5d5-8f29e6ed40f9",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        1439.415,
+        84.204,
+        1508.904,
+        114.611
+      ],
+      "before": "5",
+      "after": null,
+      "description": "Removed text: \"5\"",
+      "confidence": 0.895,
+      "extra": {}
+    },
+    {
+      "id": "4638fc46-c203-497e-afa8-c01b39a7d136",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        519.513,
+        86.54299999999999,
+        579.0749999999999,
+        114.611
+      ],
+      "before": "2",
+      "after": null,
+      "description": "Removed text: \"2\"",
+      "confidence": 0.895,
+      "extra": {}
+    },
+    {
+      "id": "f38eb209-d0cc-41cc-b553-e1ae966d91a3",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        1118.442,
+        86.54299999999999,
+        1187.931,
+        116.95
+      ],
+      "before": "4",
+      "after": null,
+      "description": "Removed text: \"4\"",
+      "confidence": 0.895,
+      "extra": {}
+    },
+    {
+      "id": "fd675105-7067-4e63-8e2d-39100ac58b77",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        1733.9160000000002,
+        86.54299999999999,
+        1806.7140000000002,
+        116.95
+      ],
+      "before": "6",
+      "after": null,
+      "description": "Removed text: \"6\"",
+      "confidence": 0.895,
+      "extra": {}
+    },
+    {
+      "id": "502aca7a-8900-4853-b1c7-80c5dbbd7e3d",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        2031.7259999999999,
+        86.54299999999999,
+        2097.906,
+        116.95
+      ],
+      "before": "7",
+      "after": null,
+      "description": "Removed text: \"7\"",
+      "confidence": 0.895,
+      "extra": {}
+    },
+    {
+      "id": "e98466c7-8613-4ad1-8191-5b06f3c2159d",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        2319.609,
+        86.54299999999999,
+        2382.48,
+        116.95
+      ],
+      "before": "8",
+      "after": null,
+      "description": "Removed text: \"8\"",
+      "confidence": 0.895,
+      "extra": {}
+    },
+    {
+      "id": "6ab9102a-8d40-479a-832c-56e1cff1680f",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        2610.801,
+        86.54299999999999,
+        2676.981,
+        116.95
+      ],
+      "before": "9",
+      "after": null,
+      "description": "Removed text: \"9\"",
+      "confidence": 0.895,
+      "extra": {}
+    },
+    {
+      "id": "a05b884a-20ad-4032-b916-c82ecabf3479",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        2901.993,
+        86.54299999999999,
+        2974.791,
+        116.95
+      ],
+      "before": "10",
+      "after": null,
+      "description": "Removed text: \"10\"",
+      "confidence": 0.895,
+      "extra": {}
+    },
+    {
+      "id": "102242f3-d7b8-4425-ac44-410aed0893ce",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        3199.803,
+        86.54299999999999,
+        3275.91,
+        116.95
+      ],
+      "before": "11",
+      "after": null,
+      "description": "Removed text: \"11\"",
+      "confidence": 0.895,
+      "extra": {}
+    },
+    {
+      "id": "1c315c91-4fa4-43b6-9646-175d67b7269d",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        506.277,
+        93.56,
+        618.783,
+        147.357
+      ],
+      "before": "SCOPE.",
+      "after": null,
+      "description": "Removed text: \"SCOPE.\"",
+      "confidence": 0.701,
+      "extra": {}
+    },
+    {
+      "id": "0da84fff-1f3a-487e-bd6c-cb6039b53c9f",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        665.109,
+        93.56,
+        794.16,
+        170.74699999999999
+      ],
+      "before": "DELETED.",
+      "after": null,
+      "description": "Removed text: \"DELETED.\"",
+      "confidence": 0.703,
+      "extra": {}
+    },
+    {
+      "id": "e70c7d37-9b68-48bc-872e-0874292a339b",
+      "change_type": "removed",
+      "category": "dimension",
+      "page": 0,
+      "bbox": [
+        797.4689999999999,
+        93.56,
+        1002.627,
+        385.935
+      ],
+      "before": "UPSTREAM STRAIGHT RUN MIN. 10XD. DOWNSTREAM STRAIGHT RUN MIN. 5XD.",
+      "after": null,
+      "description": "Removed dimension: \"UPSTREAM STRAIGHT RUN MIN. 10XD. DOWNSTREAM STRAIGHT RUN MIN. 5XD.\"",
+      "confidence": 0.749,
+      "extra": {}
+    },
+    {
+      "id": "6b1966f3-5e75-4e83-90e8-b5789766745d",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        926.5200000000001,
+        93.56,
+        1078.7340000000002,
+        276.002
+      ],
+      "before": "VENT ROUTED TO SAFE LOCATION.",
+      "after": null,
+      "description": "Removed text: \"VENT ROUTED TO SAFE LOCATION.\"",
+      "confidence": 0.746,
+      "extra": {}
+    },
+    {
+      "id": "209c4fcb-1a3c-45b6-a742-8e900c8404c5",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        1062.189,
+        93.56,
+        1187.931,
+        170.74699999999999
+      ],
+      "before": "DELETED.",
+      "after": null,
+      "description": "Removed text: \"DELETED.\"",
+      "confidence": 0.703,
+      "extra": {}
+    },
+    {
+      "id": "d99fcefe-2279-4f53-b668-2f3dd1f22c51",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        1187.931,
+        93.56,
+        1313.673,
+        170.74699999999999
+      ],
+      "before": "DELETED.",
+      "after": null,
+      "description": "Removed text: \"DELETED.\"",
+      "confidence": 0.703,
+      "extra": {}
+    },
+    {
+      "id": "a3c29674-b305-4c20-a13c-91a71fdfeabd",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        135.669,
+        95.899,
+        261.411,
+        173.08599999999998
+      ],
+      "before": "DELETED.",
+      "after": null,
+      "description": "Removed text: \"DELETED.\"",
+      "confidence": 0.703,
+      "extra": {}
+    },
+    {
+      "id": "08178b43-47a3-4b45-a1e6-858fa9a4d430",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        393.77099999999996,
+        95.899,
+        579.0749999999999,
+        385.935
+      ],
+      "before": "COMPRESSOR MOTOR EQUIPPED WITH VARIABLE SPEED DRIVE (VSD). FOR VSD",
+      "after": null,
+      "description": "Removed text: \"COMPRESSOR MOTOR EQUIPPED WITH VARIABLE SPEED DRIVE (VSD). FOR VSD\"",
+      "confidence": 0.749,
+      "extra": {}
+    },
+    {
+      "id": "5f04c672-21e3-4dbb-b9d0-73d95d9b927b",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        433.47900000000004,
+        95.899,
+        615.474,
+        385.935
+      ],
+      "before": "MONITORING AND TRIP FUNCTION, REFER VENDOR DRAWING NO.",
+      "after": null,
+      "description": "Removed text: \"MONITORING AND TRIP FUNCTION, REFER VENDOR DRAWING NO.\"",
+      "confidence": 0.746,
+      "extra": {}
+    },
+    {
+      "id": "956fb308-b196-4179-934a-c29454cc4316",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        466.56899999999996,
+        95.899,
+        678.3449999999999,
+        385.935
+      ],
+      "before": "(DD204-CIT-P-XB-ER252A-000001-002). VSD AND MCC NOT IN MOTOR VENDOR",
+      "after": null,
+      "description": "Removed text: \"(DD204-CIT-P-XB-ER252A-000001-002). VSD AND MCC NOT IN MOTOR VENDOR\"",
+      "confidence": 0.746,
+      "extra": {}
+    },
+    {
+      "id": "2ff4fd17-b013-464b-a390-04e77c5a28d8",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        1714.0620000000001,
+        187.12,
+        1793.478,
+        399.96900000000005
+      ],
+      "before": "1/2\"-RC-40-9037-AC21-00",
+      "after": null,
+      "description": "Removed text: \"1/2\"-RC-40-9037-AC21-00\"",
+      "confidence": 0.712,
+      "extra": {}
+    },
+    {
+      "id": "6e394c3c-c617-4ddf-a7b8-a921e3936e1f",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        1800.0960000000002,
+        187.12,
+        1879.512,
+        243.256
+      ],
+      "before": "1 1/2\"",
+      "after": null,
+      "description": "Removed text: \"1 1/2\"\"",
+      "confidence": 0.531,
+      "extra": {}
+    },
+    {
+      "id": "adc50e65-1739-49ab-9c9c-8a1f5abd3c95",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        1254.111,
+        189.459,
+        1346.763,
+        385.935
+      ],
+      "before": "63-900002-002",
+      "after": null,
+      "description": "Removed text: \"63-900002-002\"",
+      "confidence": 0.607,
+      "extra": {}
+    },
+    {
+      "id": "dbaa3a35-63c1-47bf-9c42-b2ffeb8d4a51",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        1297.1280000000002,
+        189.459,
+        1416.252,
+        385.935
+      ],
+      "before": "1\"-AI-63-9006-AS20-00",
+      "after": null,
+      "description": "Removed text: \"1\"-AI-63-9006-AS20-00\"",
+      "confidence": 0.711,
+      "extra": {}
+    },
+    {
+      "id": "0a3a11bb-35e0-426f-972f-acc030c8a749",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        1412.943,
+        189.459,
+        1502.286,
+        383.596
+      ],
+      "before": "63-900002-002",
+      "after": null,
+      "description": "Removed text: \"63-900002-002\"",
+      "confidence": 0.607,
+      "extra": {}
+    },
+    {
+      "id": "b96a3619-1bc0-4193-8b84-6fdd76d7665c",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        1455.96,
+        189.459,
+        1568.466,
+        383.596
+      ],
+      "before": "1\"-AI-63-9007-AS20-00",
+      "after": null,
+      "description": "Removed text: \"1\"-AI-63-9007-AS20-00\"",
+      "confidence": 0.711,
+      "extra": {}
+    },
+    {
+      "id": "184bc12b-bdba-4052-af21-4b615c412620",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        1667.736,
+        189.459,
+        1740.534,
+        245.595
+      ],
+      "before": "1 1/2\"",
+      "after": null,
+      "description": "Removed text: \"1 1/2\"\"",
+      "confidence": 0.533,
+      "extra": {}
+    },
+    {
+      "id": "ead0ac74-d53e-498e-8ed0-94f6cc7de9b6",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        1723.989,
+        189.459,
+        1806.7140000000002,
+        390.613
+      ],
+      "before": "1\"-GI-64-9002-AS20-00",
+      "after": null,
+      "description": "Removed text: \"1\"-GI-64-9002-AS20-00\"",
+      "confidence": 0.711,
+      "extra": {}
+    },
+    {
+      "id": "8c9830c7-c5de-4784-aa8d-b7a9a4cce520",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        1806.7140000000002,
+        189.459,
+        1886.1299999999999,
+        399.96900000000005
+      ],
+      "before": "1/2\"-RC-40-9033-AC21-00",
+      "after": null,
+      "description": "Removed text: \"1/2\"-RC-40-9033-AC21-00\"",
+      "confidence": 0.71,
+      "extra": {}
+    },
+    {
+      "id": "43d25367-5d16-4205-aaa5-962afd42202d",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        502.96799999999996,
+        257.29,
+        572.457,
+        355.52799999999996
+      ],
+      "before": "SP 229",
+      "after": null,
+      "description": "Removed text: \"SP 229\"",
+      "confidence": 0.7,
+      "extra": {}
+    },
+    {
+      "id": "8091306d-8af1-4486-8363-23bb6defca45",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        2385.7889999999998,
+        299.392,
+        2451.969,
+        367.223
+      ],
+      "before": "Kg/h",
+      "after": null,
+      "description": "Removed text: \"Kg/h\"",
+      "confidence": 0.503,
+      "extra": {}
+    },
+    {
+      "id": "51f5f277-23b3-438b-b0ec-dc4992dca90d",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        2514.84,
+        299.392,
+        2567.784,
+        343.83299999999997
+      ],
+      "before": "\u00b0C",
+      "after": null,
+      "description": "Removed text: \"\u00b0C\"",
+      "confidence": 0.505,
+      "extra": {}
+    },
+    {
+      "id": "4b91b252-f39f-41ec-a647-2457aa83036b",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        2640.5820000000003,
+        299.392,
+        2696.835,
+        343.83299999999997
+      ],
+      "before": "\u00b0C",
+      "after": null,
+      "description": "Removed text: \"\u00b0C\"",
+      "confidence": 0.507,
+      "extra": {}
+    },
+    {
+      "id": "16fb8459-cdc9-481e-9ffa-513db4b4f03c",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        2332.845,
+        301.731,
+        2389.098,
+        341.49399999999997
+      ],
+      "before": "KW",
+      "after": null,
+      "description": "Removed text: \"KW\"",
+      "confidence": 0.503,
+      "extra": {}
+    },
+    {
+      "id": "a17a21f8-29ea-441d-bde8-34a3d537e25e",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        2445.351,
+        301.731,
+        2514.84,
+        376.579
+      ],
+      "before": "Barg",
+      "after": null,
+      "description": "Removed text: \"Barg\"",
+      "confidence": 0.508,
+      "extra": {}
+    },
+    {
+      "id": "97c8f03f-ffaf-4c28-a3f8-2885af34d8eb",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        2574.402,
+        301.731,
+        2643.891,
+        376.579
+      ],
+      "before": "Barg",
+      "after": null,
+      "description": "Removed text: \"Barg\"",
+      "confidence": 0.508,
+      "extra": {}
+    },
+    {
+      "id": "d26327ce-844a-4c0b-afea-b759fbc1a605",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        2260.047,
+        322.78200000000004,
+        2475.132,
+        500.546
+      ],
+      "before": "3RD STAGE HP GAS LIFT COMPRESSOR",
+      "after": null,
+      "description": "Removed text: \"3RD STAGE HP GAS LIFT COMPRESSOR\"",
+      "confidence": 0.7,
+      "extra": {}
+    },
+    {
+      "id": "95efce5c-ca11-4b7b-9a40-8b273654bb4b",
+      "change_type": "removed",
+      "category": "tag",
+      "page": 0,
+      "bbox": [
+        2226.9570000000003,
+        325.12100000000004,
+        2349.39,
+        500.546
+      ],
+      "before": "26-KA-901",
+      "after": null,
+      "description": "Removed tag: \"26-KA-901\"",
+      "confidence": 0.695,
+      "extra": {}
+    },
+    {
+      "id": "0a3d5ecf-fabf-480e-8edc-5bc45dc0339a",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        3120.3869999999997,
+        383.596,
+        3256.056,
+        502.885
+      ],
+      "before": "MAN ENERGY SOLUTIONS",
+      "after": null,
+      "description": "Removed text: \"MAN ENERGY SOLUTIONS\"",
+      "confidence": 0.699,
+      "extra": {}
+    },
+    {
+      "id": "72e10758-732c-4d20-b394-5227e9db6b70",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        3047.589,
+        385.935,
+        3183.258,
+        502.885
+      ],
+      "before": "TT-26-9712-AS20-00",
+      "after": null,
+      "description": "Removed text: \"TT-26-9712-AS20-00\"",
+      "confidence": 0.699,
+      "extra": {}
+    },
+    {
+      "id": "1d91d4a1-1cbd-4847-924c-f822d07a93ad",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        2925.156,
+        388.274,
+        3027.735,
+        500.546
+      ],
+      "before": "CENTRIFUGAL",
+      "after": null,
+      "description": "Removed text: \"CENTRIFUGAL\"",
+      "confidence": 0.7,
+      "extra": {}
+    },
+    {
+      "id": "ac9591c3-b731-4a4c-b469-8f0418698d5e",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        2723.307,
+        390.613,
+        2852.358,
+        500.546
+      ],
+      "before": "LXCS (1.7218)",
+      "after": null,
+      "description": "Removed text: \"LXCS (1.7218)\"",
+      "confidence": 0.7,
+      "extra": {}
+    },
+    {
+      "id": "bd6e6fda-e8e2-4c51-a9ca-f2bc6d314832",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        2786.178,
+        390.613,
+        2892.066,
+        500.546
+      ],
+      "before": "1X100%",
+      "after": null,
+      "description": "Removed text: \"1X100%\"",
+      "confidence": 0.701,
+      "extra": {}
+    },
+    {
+      "id": "e0da382c-d401-4e13-b8ab-299a8ed39582",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        2855.667,
+        390.613,
+        2961.555,
+        500.546
+      ],
+      "before": "VARIABLE SPEED MOTOR DRIVEN",
+      "after": null,
+      "description": "Removed text: \"VARIABLE SPEED MOTOR DRIVEN\"",
+      "confidence": 0.7,
+      "extra": {}
+    },
+    {
+      "id": "dadb68be-e8bd-4b05-8f85-aeb8f912ae29",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        2504.913,
+        406.986,
+        2614.11,
+        502.885
+      ],
+      "before": "122 - 135 / 50",
+      "after": null,
+      "description": "Removed text: \"122 - 135 / 50\"",
+      "confidence": 0.7,
+      "extra": {}
+    },
+    {
+      "id": "d8391738-e8d5-4f24-a845-c8630625f79b",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        2633.964,
+        409.325,
+        2729.9249999999997,
+        500.546
+      ],
+      "before": "46 / 160",
+      "after": null,
+      "description": "Removed text: \"46 / 160\"",
+      "confidence": 0.701,
+      "extra": {}
+    },
+    {
+      "id": "50b566a0-261b-40d3-a29b-9b23aebf04bc",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        2382.48,
+        411.664,
+        2471.823,
+        474.817
+      ],
+      "before": "19057",
+      "after": null,
+      "description": "Removed text: \"19057\"",
+      "confidence": 0.701,
+      "extra": {}
+    },
+    {
+      "id": "adc35d5e-3631-4f89-aace-0d00f6b48385",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        2442.042,
+        411.664,
+        2547.93,
+        502.885
+      ],
+      "before": "229 / 108.5",
+      "after": null,
+      "description": "Removed text: \"229 / 108.5\"",
+      "confidence": 0.699,
+      "extra": {}
+    },
+    {
+      "id": "d7d43666-3cb7-4a2c-87d5-14da8ede169a",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        2571.0930000000003,
+        411.664,
+        2653.818,
+        500.546
+      ],
+      "before": "FV / 286",
+      "after": null,
+      "description": "Removed text: \"FV / 286\"",
+      "confidence": 0.7,
+      "extra": {}
+    },
+    {
+      "id": "69719d25-13ae-43a7-b5d5-d3beb15be2f0",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        2329.536,
+        414.003,
+        2402.334,
+        453.766
+      ],
+      "before": "776",
+      "after": null,
+      "description": "Removed text: \"776\"",
+      "confidence": 0.701,
+      "extra": {}
+    },
+    {
+      "id": "7c753d36-1a1e-4f37-b2ca-2078c0959888",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        1568.466,
+        416.342,
+        1661.118,
+        502.885
+      ],
+      "before": "40GT9079",
+      "after": null,
+      "description": "Removed text: \"40GT9079\"",
+      "confidence": 0.703,
+      "extra": {}
+    },
+    {
+      "id": "7a4dd078-7bab-4fd1-8d85-96db35f7ad8c",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        1571.7749999999999,
+        416.342,
+        1624.719,
+        458.444
+      ],
+      "before": "2\"",
+      "after": null,
+      "description": "Removed text: \"2\"\"",
+      "confidence": 0.503,
+      "extra": {}
+    },
+    {
+      "id": "8c045e7b-686b-43ab-84f0-4ae4279d590a",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        1929.147,
+        416.342,
+        1988.7089999999998,
+        460.783
+      ],
+      "before": "2\"",
+      "after": null,
+      "description": "Removed text: \"2\"\"",
+      "confidence": 0.504,
+      "extra": {}
+    },
+    {
+      "id": "38e32687-274d-404e-bced-dfba67b55830",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        1505.595,
+        418.681,
+        1611.483,
+        638.547
+      ],
+      "before": "2\"-WC-40-9037-AC21-00",
+      "after": null,
+      "description": "Removed text: \"2\"-WC-40-9037-AC21-00\"",
+      "confidence": 0.712,
+      "extra": {}
+    },
+    {
+      "id": "63835a92-698e-471e-a392-59e0853928e6",
+      "change_type": "removed",
+      "category": "dimension",
+      "page": 0,
+      "bbox": [
+        1588.32,
+        418.681,
+        1680.972,
+        502.885
+      ],
+      "before": "2\"GTACOOR",
+      "after": null,
+      "description": "Removed dimension: \"2\"GTACOOR\"",
+      "confidence": 0.705,
+      "extra": {}
+    },
+    {
+      "id": "69fd37dc-acea-411b-950d-813899642689",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        1935.7649999999999,
+        418.681,
+        2021.799,
+        500.546
+      ],
+      "before": "40GT9079",
+      "after": null,
+      "description": "Removed text: \"40GT9079\"",
+      "confidence": 0.705,
+      "extra": {}
+    },
+    {
+      "id": "2666f78a-8403-4f99-98a6-f7385419fe8c",
+      "change_type": "removed",
+      "category": "dimension",
+      "page": 0,
+      "bbox": [
+        1955.619,
+        418.681,
+        2044.962,
+        500.546
+      ],
+      "before": "2\"GTACOOR",
+      "after": null,
+      "description": "Removed dimension: \"2\"GTACOOR\"",
+      "confidence": 0.706,
+      "extra": {}
+    },
+    {
+      "id": "ade41be6-edb7-4219-925d-3ba09f70d7f3",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        1813.332,
+        421.02,
+        1919.2199999999998,
+        640.8860000000001
+      ],
+      "before": "3\"-WC-40-9015-AC21-00",
+      "after": null,
+      "description": "Removed text: \"3\"-WC-40-9015-AC21-00\"",
+      "confidence": 0.712,
+      "extra": {}
+    },
+    {
+      "id": "b931d2ff-be97-45ed-b8ed-4514277d44c2",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        2018.49,
+        421.02,
+        2121.069,
+        640.8860000000001
+      ],
+      "before": "3\"-WC-40-9012-AC21-00",
+      "after": null,
+      "description": "Removed text: \"3\"-WC-40-9012-AC21-00\"",
+      "confidence": 0.711,
+      "extra": {}
+    },
+    {
+      "id": "b1819277-6f82-4777-9026-4f0d83c8dc15",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        89.343,
+        516.919,
+        152.214,
+        535.631
+      ],
+      "before": "1.",
+      "after": null,
+      "description": "Removed text: \"1.\"",
+      "confidence": 0.774,
+      "extra": {}
+    },
+    {
+      "id": "205f4249-f41f-4d34-818d-34baaf8edfa9",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        2336.154,
+        535.631,
+        2442.042,
+        638.547
+      ],
+      "before": "NOTE 28",
+      "after": null,
+      "description": "Removed text: \"NOTE 28\"",
+      "confidence": 0.728,
+      "extra": {}
+    },
+    {
+      "id": "ba430718-1523-481b-ab1c-7e296c033f63",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        2385.7889999999998,
+        535.631,
+        2485.059,
+        638.547
+      ],
+      "before": "NOTE 29",
+      "after": null,
+      "description": "Removed text: \"NOTE 29\"",
+      "confidence": 0.729,
+      "extra": {}
+    },
+    {
+      "id": "02bed2ad-50ab-4ee6-8163-78e05b069156",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        2571.0930000000003,
+        537.97,
+        2657.127,
+        626.8520000000001
+      ],
+      "before": "FV / 286",
+      "after": null,
+      "description": "Removed text: \"FV / 286\"",
+      "confidence": 0.702,
+      "extra": {}
+    },
+    {
+      "id": "a3ea479d-fb97-4e14-a7fd-32a63523f663",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        2637.273,
+        537.97,
+        2729.9249999999997,
+        626.8520000000001
+      ],
+      "before": "46 / 160",
+      "after": null,
+      "description": "Removed text: \"46 / 160\"",
+      "confidence": 0.701,
+      "extra": {}
+    },
+    {
+      "id": "933a060d-d537-4b05-b1ce-2565c949ebd9",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        92.652,
+        554.343,
+        463.26000000000005,
+        755.4970000000001
+      ],
+      "before": "26-PDIT-9054 HH INITIATE PRESSURIZED COMPRESSOR STOP.",
+      "after": null,
+      "description": "Removed text: \"26-PDIT-9054 HH INITIATE PRESSURIZED COMPRESSOR STOP.\"",
+      "confidence": 0.746,
+      "extra": {}
+    },
+    {
+      "id": "2c1cc631-6947-41b6-9ccc-313d60d42de6",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        2584.329,
+        631.5300000000001,
+        2680.29,
+        720.412
+      ],
+      "before": "NOTE 22",
+      "after": null,
+      "description": "Removed text: \"NOTE 22\"",
+      "confidence": 0.729,
+      "extra": {}
+    },
+    {
+      "id": "7a1cabd1-2879-4400-99b2-7ea6d73f9b20",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        89.343,
+        783.565,
+        152.214,
+        799.9380000000001
+      ],
+      "before": "2.",
+      "after": null,
+      "description": "Removed text: \"2.\"",
+      "confidence": 0.768,
+      "extra": {}
+    },
+    {
+      "id": "a86534fb-45b1-41c6-8657-9690979cc3a8",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        92.652,
+        823.328,
+        509.586,
+        1024.482
+      ],
+      "before": "26-PDI-9054 VENT, OIL MIST SEPARATOR INSTALLED OFF-SKID.",
+      "after": null,
+      "description": "Removed text: \"26-PDI-9054 VENT, OIL MIST SEPARATOR INSTALLED OFF-SKID.\"",
+      "confidence": 0.746,
+      "extra": {}
+    },
+    {
+      "id": "1084ff1c-ce4b-42a9-a66a-3e445763972b",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        89.343,
+        1066.584,
+        155.523,
+        1085.296
+      ],
+      "before": "3.",
+      "after": null,
+      "description": "Removed text: \"3.\"",
+      "confidence": 0.766,
+      "extra": {}
+    },
+    {
+      "id": "ad87cf69-81c0-47df-b64f-d941b76bfa11",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        1234.257,
+        1092.313,
+        1297.1280000000002,
+        1132.076
+      ],
+      "before": "16.",
+      "after": null,
+      "description": "Removed text: \"16.\"",
+      "confidence": 0.768,
+      "extra": {}
+    },
+    {
+      "id": "45c527e8-cff0-42e4-a8e1-01e9d9adf9af",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        1336.836,
+        1092.313,
+        1399.7069999999999,
+        1129.7369999999999
+      ],
+      "before": "17.",
+      "after": null,
+      "description": "Removed text: \"17.\"",
+      "confidence": 0.768,
+      "extra": {}
+    },
+    {
+      "id": "249a09e6-9bea-41e3-9ef1-f73c89a663b3",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        1651.191,
+        1092.313,
+        1714.0620000000001,
+        1129.7369999999999
+      ],
+      "before": "20.",
+      "after": null,
+      "description": "Removed text: \"20.\"",
+      "confidence": 0.767,
+      "extra": {}
+    },
+    {
+      "id": "6bf05847-bbfc-44ab-9710-6b50609a96dd",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        2518.149,
+        1092.313,
+        2581.02,
+        1129.7369999999999
+      ],
+      "before": "33.",
+      "after": null,
+      "description": "Removed text: \"33.\"",
+      "confidence": 0.767,
+      "extra": {}
+    },
+    {
+      "id": "cb756d18-6251-4423-9006-4e6a3aae800b",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        1406.325,
+        1094.652,
+        1469.196,
+        1132.076
+      ],
+      "before": "18.",
+      "after": null,
+      "description": "Removed text: \"18.\"",
+      "confidence": 0.768,
+      "extra": {}
+    },
+    {
+      "id": "21df2a68-80f2-40fb-9b88-55055ebdfea3",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        1475.814,
+        1094.652,
+        1535.376,
+        1129.7369999999999
+      ],
+      "before": "19.",
+      "after": null,
+      "description": "Removed text: \"19.\"",
+      "confidence": 0.767,
+      "extra": {}
+    },
+    {
+      "id": "95b251a7-1b72-45a4-95fb-5127cc637300",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        1720.68,
+        1094.652,
+        1783.5510000000002,
+        1132.076
+      ],
+      "before": "21.",
+      "after": null,
+      "description": "Removed text: \"21.\"",
+      "confidence": 0.767,
+      "extra": {}
+    },
+    {
+      "id": "dd530f1c-73dc-48fd-b58f-f4c494254ff2",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        1786.8600000000001,
+        1094.652,
+        1849.7310000000002,
+        1132.076
+      ],
+      "before": "22.",
+      "after": null,
+      "description": "Removed text: \"22.\"",
+      "confidence": 0.768,
+      "extra": {}
+    },
+    {
+      "id": "2a40fec6-bba8-4e0c-960f-b91953919f5f",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        1849.7310000000002,
+        1094.652,
+        1915.9109999999998,
+        1132.076
+      ],
+      "before": "23.",
+      "after": null,
+      "description": "Removed text: \"23.\"",
+      "confidence": 0.768,
+      "extra": {}
+    },
+    {
+      "id": "6b59b52c-c998-4646-99b1-2c24faed95c3",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        1919.2199999999998,
+        1094.652,
+        1978.782,
+        1132.076
+      ],
+      "before": "24.",
+      "after": null,
+      "description": "Removed text: \"24.\"",
+      "confidence": 0.768,
+      "extra": {}
+    },
+    {
+      "id": "c2565a91-f911-421d-8eb9-352825583c6b",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        1982.091,
+        1094.652,
+        2044.962,
+        1132.076
+      ],
+      "before": "25.",
+      "after": null,
+      "description": "Removed text: \"25.\"",
+      "confidence": 0.768,
+      "extra": {}
+    },
+    {
+      "id": "eb31e47c-e618-4cf5-953b-5eddab54f2cf",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        2044.962,
+        1094.652,
+        2111.142,
+        1132.076
+      ],
+      "before": "26.",
+      "after": null,
+      "description": "Removed text: \"26.\"",
+      "confidence": 0.767,
+      "extra": {}
+    },
+    {
+      "id": "f41189e8-1199-4e7a-bfb5-15f07d989224",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        2111.142,
+        1094.652,
+        2174.013,
+        1132.076
+      ],
+      "before": "27.",
+      "after": null,
+      "description": "Removed text: \"27.\"",
+      "confidence": 0.768,
+      "extra": {}
+    },
+    {
+      "id": "89061570-6473-4a25-8d84-cdac1b8c126d",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        2174.013,
+        1094.652,
+        2240.193,
+        1132.076
+      ],
+      "before": "28.",
+      "after": null,
+      "description": "Removed text: \"28.\"",
+      "confidence": 0.768,
+      "extra": {}
+    },
+    {
+      "id": "138411fd-c467-47ff-8c88-4750f4c84c0f",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        2240.193,
+        1094.652,
+        2306.373,
+        1132.076
+      ],
+      "before": "29.",
+      "after": null,
+      "description": "Removed text: \"29.\"",
+      "confidence": 0.768,
+      "extra": {}
+    },
+    {
+      "id": "440a7252-30f7-4a0d-a363-55baba30c306",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        2309.682,
+        1094.652,
+        2375.862,
+        1132.076
+      ],
+      "before": "30.",
+      "after": null,
+      "description": "Removed text: \"30.\"",
+      "confidence": 0.768,
+      "extra": {}
+    },
+    {
+      "id": "0cbed343-1e03-4fda-ac3b-3480ae44a10d",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        2379.171,
+        1094.652,
+        2445.351,
+        1132.076
+      ],
+      "before": "31.",
+      "after": null,
+      "description": "Removed text: \"31.\"",
+      "confidence": 0.768,
+      "extra": {}
+    },
+    {
+      "id": "899e8c21-9864-4d2c-a3d2-a23e2e4f06e3",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        2445.351,
+        1094.652,
+        2511.531,
+        1132.076
+      ],
+      "before": "32.",
+      "after": null,
+      "description": "Removed text: \"32.\"",
+      "confidence": 0.768,
+      "extra": {}
+    },
+    {
+      "id": "c5d2ef1d-4334-4576-8190-9b50a1e18c49",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        2577.7110000000002,
+        1094.652,
+        2643.891,
+        1129.7369999999999
+      ],
+      "before": "34.",
+      "after": null,
+      "description": "Removed text: \"34.\"",
+      "confidence": 0.767,
+      "extra": {}
+    },
+    {
+      "id": "a8327dc3-235b-4218-b825-f0cd527428b2",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        92.652,
+        1104.008,
+        572.457,
+        1305.162
+      ],
+      "before": "HIGH POINT VENT AND LOW POINT DRAIN TO BE FINALIZED BY PIPING AS PER PIPING",
+      "after": null,
+      "description": "Removed text: \"HIGH POINT VENT AND LOW POINT DRAIN TO BE FINALIZED BY PIPING AS PER PIPING\"",
+      "confidence": 0.746,
+      "extra": {}
+    },
+    {
+      "id": "5ac8fbd8-1c28-40b3-b387-fb146aa7ab51",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        132.36,
+        1104.008,
+        251.48399999999998,
+        1160.144
+      ],
+      "before": "LAYOUT.",
+      "after": null,
+      "description": "Removed text: \"LAYOUT.\"",
+      "confidence": 0.702,
+      "extra": {}
+    },
+    {
+      "id": "b265e7e5-5214-4e84-8654-663b0c850839",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        1237.566,
+        1129.7369999999999,
+        1704.135,
+        1305.162
+      ],
+      "before": "PRIMARY SEAL GAS IS TAKEN DOWNSTREAM LAST COMPRESSING STAGE (8TH STAGE). SKID INTERNAL",
+      "after": null,
+      "description": "Removed text: \"PRIMARY SEAL GAS IS TAKEN DOWNSTREAM LAST COMPRESSING STAGE (8TH STAGE). SKID INTERNAL\"",
+      "confidence": 0.746,
+      "extra": {}
+    },
+    {
+      "id": "3f09d135-bc65-4f71-a8ba-c5b97589b55d",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        1551.9209999999998,
+        1129.7369999999999,
+        1786.8600000000001,
+        1307.5010000000002
+      ],
+      "before": "% OF DESIGN DP AND COMPRESSOR HIGH-HIGH TRIP AT 50% OF DESIGN DP RECOMMENDED BY",
+      "after": null,
+      "description": "Removed text: \"% OF DESIGN DP AND COMPRESSOR HIGH-HIGH TRIP AT 50% OF DESIGN DP RECOMMENDED BY\"",
+      "confidence": 0.746,
+      "extra": {}
+    },
+    {
+      "id": "9d57051b-c239-4da1-b1c2-ffcde0556405",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        1585.011,
+        1129.7369999999999,
+        1733.9160000000002,
+        1307.5010000000002
+      ],
+      "before": "COMPRESSOR VENDOR.",
+      "after": null,
+      "description": "Removed text: \"COMPRESSOR VENDOR.\"",
+      "confidence": 0.701,
+      "extra": {}
+    },
+    {
+      "id": "692959dd-c534-4a2b-9b7f-47566104a1b3",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        2485.059,
+        1129.7369999999999,
+        1786.8600000000001,
+        1307.5010000000002
+      ],
+      "before": "26-PDI-9055 26-PIT-9055 AND PDIT OVER ORIFICE. (REF. VENDOR P&ID: 26-PDIT-9757)",
+      "after": null,
+      "description": "Removed text: \"26-PDI-9055 26-PIT-9055 AND PDIT OVER ORIFICE. (REF. VENDOR P&ID: 26-PDIT-9757)\"",
+      "confidence": 0.746,
+      "extra": {}
+    },
+    {
+      "id": "d83ae7fd-1e91-4c67-8e5b-0e3e295ffc9f",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        1340.145,
+        1132.076,
+        1628.028,
+        1305.162
+      ],
+      "before": "SECONDARY SEAL GAS AND SEPARATION GAS.",
+      "after": null,
+      "description": "Removed text: \"SECONDARY SEAL GAS AND SEPARATION GAS.\"",
+      "confidence": 0.746,
+      "extra": {}
+    },
+    {
+      "id": "054c4c8f-6423-4ecf-a95a-c70328fb0ff0",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        1409.634,
+        1132.076,
+        1786.8600000000001,
+        1307.5010000000002
+      ],
+      "before": "ANTI-SURGE CONTROL (ASC) AND PRESSURE CONTROL (P1C3-GL) BY UCP. COMPRESSOR DISCHARGE",
+      "after": null,
+      "description": "Removed text: \"ANTI-SURGE CONTROL (ASC) AND PRESSURE CONTROL (P1C3-GL) BY UCP. COMPRESSOR DISCHARGE\"",
+      "confidence": 0.746,
+      "extra": {}
+    },
+    {
+      "id": "b0363fba-ad6b-41fa-9402-9cea03a4cb23",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        1442.724,
+        1132.076,
+        1618.1009999999999,
+        1307.5010000000002
+      ],
+      "before": "PRESSURE IS CONTROLLED WITH RSO.",
+      "after": null,
+      "description": "Removed text: \"PRESSURE IS CONTROLLED WITH RSO.\"",
+      "confidence": 0.701,
+      "extra": {}
+    },
+    {
+      "id": "3de05166-b792-4d95-8baf-2a0c23e31d52",
+      "change_type": "removed",
+      "category": "dimension",
+      "page": 0,
+      "bbox": [
+        1475.814,
+        1132.076,
+        1773.624,
+        1307.5010000000002
+      ],
+      "before": "SECTION TRAJECTORY (CONDITIONAL PHASE ONLY) WITH STRAIGHT PIPE RUNS MIN. 5XD",
+      "after": null,
+      "description": "Removed dimension: \"SECTION TRAJECTORY (CONDITIONAL PHASE ONLY) WITH STRAIGHT PIPE RUNS MIN. 5XD\"",
+      "confidence": 0.746,
+      "extra": {}
+    },
+    {
+      "id": "d410639c-5bcd-4bc0-9769-a3079dbf5dbf",
+      "change_type": "removed",
+      "category": "dimension",
+      "page": 0,
+      "bbox": [
+        1515.5220000000002,
+        1132.076,
+        1786.8600000000001,
+        1307.5010000000002
+      ],
+      "before": "UPSTREAM AND 2XD DOWNSTREAM TO AVOID DAMAGE DUE TO TURBULENCE. HIGH ALARM AT 40",
+      "after": null,
+      "description": "Removed dimension: \"UPSTREAM AND 2XD DOWNSTREAM TO AVOID DAMAGE DUE TO TURBULENCE. HIGH ALARM AT 40\"",
+      "confidence": 0.746,
+      "extra": {}
+    },
+    {
+      "id": "a30a7574-9110-4308-b7d8-5b0078f976be",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        1654.5,
+        1132.076,
+        1790.169,
+        1307.5010000000002
+      ],
+      "before": "SIMULATION THICKNESS TO BE TAKEN INTO CONSIDERATION ON TW SELECTION.",
+      "after": null,
+      "description": "Removed text: \"SIMULATION THICKNESS TO BE TAKEN INTO CONSIDERATION ON TW SELECTION.\"",
+      "confidence": 0.746,
+      "extra": {}
+    },
+    {
+      "id": "1a565bcb-104e-414e-a927-2acccedbfd01",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        1720.68,
+        1132.076,
+        1786.8600000000001,
+        1307.5010000000002
+      ],
+      "before": "DIFFERENTIAL PRESSURE BASED ORIFICE TYPE FLOW METER.",
+      "after": null,
+      "description": "Removed text: \"DIFFERENTIAL PRESSURE BASED ORIFICE TYPE FLOW METER.\"",
+      "confidence": 0.746,
+      "extra": {}
+    },
+    {
+      "id": "00fa3ec0-78ba-49af-abde-f28a55cf3fe0",
+      "change_type": "removed",
+      "category": "dimension",
+      "page": 0,
+      "bbox": [
+        1790.169,
+        1132.076,
+        1786.8600000000001,
+        1307.5010000000002
+      ],
+      "before": "DESIGN PRESSURE SET POINT: ALL SYSTEM DOWNSTREAM COMPRESSOR 257 BARG.",
+      "after": null,
+      "description": "Removed dimension: \"DESIGN PRESSURE SET POINT: ALL SYSTEM DOWNSTREAM COMPRESSOR 257 BARG.\"",
+      "confidence": 0.746,
+      "extra": {}
+    },
+    {
+      "id": "060c7945-21e2-42e6-a4d9-673da28f9e7a",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        1856.3490000000002,
+        1132.076,
+        1786.8600000000001,
+        1307.5010000000002
+      ],
+      "before": "LEAKAGE SEAL SYSTEM PRESSURE DISCS.",
+      "after": null,
+      "description": "Removed text: \"LEAKAGE SEAL SYSTEM PRESSURE DISCS.\"",
+      "confidence": 0.701,
+      "extra": {}
+    },
+    {
+      "id": "3d65b823-55f3-4b2f-9c61-2c718c8f9440",
+      "change_type": "removed",
+      "category": "dimension",
+      "page": 0,
+      "bbox": [
+        1919.2199999999998,
+        1132.076,
+        1786.8600000000001,
+        1307.5010000000002
+      ],
+      "before": "MAX BACK-PRESSURE 0.005 BARG.",
+      "after": null,
+      "description": "Removed dimension: \"MAX BACK-PRESSURE 0.005 BARG.\"",
+      "confidence": 0.701,
+      "extra": {}
+    },
+    {
+      "id": "39ca3f7e-220f-4aa0-bedc-4bcdb8657a5f",
+      "change_type": "removed",
+      "category": "dimension",
+      "page": 0,
+      "bbox": [
+        1982.091,
+        1132.076,
+        1786.8600000000001,
+        1307.5010000000002
+      ],
+      "before": "MAX BACK-PRESSURE 1.5 BARG.",
+      "after": null,
+      "description": "Removed dimension: \"MAX BACK-PRESSURE 1.5 BARG.\"",
+      "confidence": 0.701,
+      "extra": {}
+    },
+    {
+      "id": "e02e4aa3-083f-4166-acf8-29fe9c79e182",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        2048.271,
+        1132.076,
+        1786.8600000000001,
+        1307.5010000000002
+      ],
+      "before": "PURGE CONNECTION FOR SUCTION AND DISCHARGE NOZZLES.",
+      "after": null,
+      "description": "Removed text: \"PURGE CONNECTION FOR SUCTION AND DISCHARGE NOZZLES.\"",
+      "confidence": 0.701,
+      "extra": {}
+    },
+    {
+      "id": "e4745b82-4983-4b01-8096-8676cf1c8676",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        2114.451,
+        1132.076,
+        1786.8600000000001,
+        1307.5010000000002
+      ],
+      "before": "COMPRESSOR SUCTION PRESSURE TO PDIT FOR PRIMARY SEAL GAS.",
+      "after": null,
+      "description": "Removed text: \"COMPRESSOR SUCTION PRESSURE TO PDIT FOR PRIMARY SEAL GAS.\"",
+      "confidence": 0.701,
+      "extra": {}
+    },
+    {
+      "id": "0ab1e5c8-578a-46ed-9199-22591caefd3d",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        2177.322,
+        1132.076,
+        1786.8600000000001,
+        1307.5010000000002
+      ],
+      "before": "POWER AT COMPRESSOR COUPLING FOR CASE JB.",
+      "after": null,
+      "description": "Removed text: \"POWER AT COMPRESSOR COUPLING FOR CASE JB.\"",
+      "confidence": 0.701,
+      "extra": {}
+    },
+    {
+      "id": "86c942cf-95dc-4b2b-987e-1ca3a55ea72c",
+      "change_type": "removed",
+      "category": "dimension",
+      "page": 0,
+      "bbox": [
+        2243.502,
+        1132.076,
+        1786.8600000000001,
+        1307.5010000000002
+      ],
+      "before": "PRIMARY SEAL GAS. CORRESPONDING VOL.% LOW IS 0.005MMSCFD / 0.28 MSm3 /d.",
+      "after": null,
+      "description": "Removed dimension: \"PRIMARY SEAL GAS. CORRESPONDING VOL.% LOW IS 0.005MMSCFD / 0.28 MSm3 /d.\"",
+      "confidence": 0.746,
+      "extra": {}
+    },
+    {
+      "id": "809a0517-f6f0-4394-bbd5-abf52d0f4b63",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        2312.991,
+        1132.076,
+        1786.8600000000001,
+        1307.5010000000002
+      ],
+      "before": "SAFETY CRITICAL HEAT TRACING. HYDRATED MITIGATION (25\u00b0C)",
+      "after": null,
+      "description": "Removed text: \"SAFETY CRITICAL HEAT TRACING. HYDRATED MITIGATION (25\u00b0C)\"",
+      "confidence": 0.746,
+      "extra": {}
+    },
+    {
+      "id": "f9ff5e73-085a-492f-91ae-f60137bbe0a9",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        2382.48,
+        1132.076,
+        1786.8600000000001,
+        1307.5010000000002
+      ],
+      "before": "SET POINT IS OVERRIDDEN AT START-UP.",
+      "after": null,
+      "description": "Removed text: \"SET POINT IS OVERRIDDEN AT START-UP.\"",
+      "confidence": 0.701,
+      "extra": {}
+    },
+    {
+      "id": "8fff43dc-004e-4aa9-9c4c-ac975baa5f16",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        2448.66,
+        1132.076,
+        1786.8600000000001,
+        1307.5010000000002
+      ],
+      "before": "DIFFERENTIAL PRESSURE BASED ORIFICE TYPE FLOW METER. BALANCE LINE TEMPERATURE",
+      "after": null,
+      "description": "Removed text: \"DIFFERENTIAL PRESSURE BASED ORIFICE TYPE FLOW METER. BALANCE LINE TEMPERATURE\"",
+      "confidence": 0.746,
+      "extra": {}
+    },
+    {
+      "id": "156faa2d-9736-4993-a9e4-3ef228fcd8d5",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        2521.458,
+        1132.076,
+        1786.8600000000001,
+        1307.5010000000002
+      ],
+      "before": "USED FOR BALANCE LINE COOLER PROCESS GAS FLOW CALCULATION.",
+      "after": null,
+      "description": "Removed text: \"USED FOR BALANCE LINE COOLER PROCESS GAS FLOW CALCULATION.\"",
+      "confidence": 0.701,
+      "extra": {}
+    },
+    {
+      "id": "fef12240-31f0-4ed4-a46c-afd3a2e78af1",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        89.343,
+        1326.213,
+        152.214,
+        1342.5859999999998
+      ],
+      "before": "4.",
+      "after": null,
+      "description": "Removed text: \"4.\"",
+      "confidence": 0.769,
+      "extra": {}
+    },
+    {
+      "id": "f3bed96d-d444-4d5a-a6ee-bb9641c38ed6",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        132.36,
+        1361.298,
+        258.102,
+        1438.485
+      ],
+      "before": "DELETED.",
+      "after": null,
+      "description": "Removed text: \"DELETED.\"",
+      "confidence": 0.701,
+      "extra": {}
+    },
+    {
+      "id": "58c37952-d4b7-48bd-aa4c-5ef3cb843fba",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        89.343,
+        1457.197,
+        155.523,
+        1473.57
+      ],
+      "before": "5.",
+      "after": null,
+      "description": "Removed text: \"5.\"",
+      "confidence": 0.768,
+      "extra": {}
+    },
+    {
+      "id": "ad3ac799-de4f-47f9-8eef-7f4f97b86f63",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        92.652,
+        1494.621,
+        453.333,
+        1677.0629999999999
+      ],
+      "before": "OIL CHANGE BY USING TEMPORARY ARRANGEMENT WITH HOSES.",
+      "after": null,
+      "description": "Removed text: \"OIL CHANGE BY USING TEMPORARY ARRANGEMENT WITH HOSES.\"",
+      "confidence": 0.746,
+      "extra": {}
+    },
+    {
+      "id": "12285fc9-8d87-4f68-a2e0-50fe02e039b2",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        89.343,
+        1693.436,
+        152.214,
+        1712.148
+      ],
+      "before": "6.",
+      "after": null,
+      "description": "Removed text: \"6.\"",
+      "confidence": 0.767,
+      "extra": {}
+    },
+    {
+      "id": "80bff0b4-0b49-4a1c-8c37-1b590a31b633",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        132.36,
+        1728.521,
+        261.411,
+        1805.708
+      ],
+      "before": "DELETED.",
+      "after": null,
+      "description": "Removed text: \"DELETED.\"",
+      "confidence": 0.702,
+      "extra": {}
+    },
+    {
+      "id": "b8eca2e8-6a43-49c1-b307-67541d36ea57",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        89.343,
+        1826.759,
+        155.523,
+        1845.471
+      ],
+      "before": "7.",
+      "after": null,
+      "description": "Removed text: \"7.\"",
+      "confidence": 0.769,
+      "extra": {}
+    },
+    {
+      "id": "a0d040a3-0e2d-423a-87e4-d69ee7600e42",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        92.652,
+        1864.183,
+        499.659,
+        2055.981
+      ],
+      "before": "FLAME ARRESTER INCLUDES FLAME FILTER AND LOCATED AT END OF PIPE.",
+      "after": null,
+      "description": "Removed text: \"FLAME ARRESTER INCLUDES FLAME FILTER AND LOCATED AT END OF PIPE.\"",
+      "confidence": 0.746,
+      "extra": {}
+    },
+    {
+      "id": "412540fd-c20c-4221-964c-d0057c34c90e",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        89.343,
+        2079.371,
+        152.214,
+        2098.083
+      ],
+      "before": "8.",
+      "after": null,
+      "description": "Removed text: \"8.\"",
+      "confidence": 0.769,
+      "extra": {}
+    },
+    {
+      "id": "171b5c2a-53fc-4fa9-98dc-aee50a74354e",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        92.652,
+        2116.795,
+        585.693,
+        2308.593
+      ],
+      "before": "MANUAL DRAIN PRIOR TO EACH START-UP. PUSH BUTTON WITH PERMISSIVE FOR",
+      "after": null,
+      "description": "Removed text: \"MANUAL DRAIN PRIOR TO EACH START-UP. PUSH BUTTON WITH PERMISSIVE FOR\"",
+      "confidence": 0.746,
+      "extra": {}
+    },
+    {
+      "id": "5a4b9e15-1992-4e1e-b200-e12c6c200790",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        132.36,
+        2116.795,
+        337.518,
+        2186.965
+      ],
+      "before": "START-UP SEQUENCE.",
+      "after": null,
+      "description": "Removed text: \"START-UP SEQUENCE.\"",
+      "confidence": 0.702,
+      "extra": {}
+    },
+    {
+      "id": "d39560bd-66da-4e9b-80ed-86625c62329a",
+      "change_type": "removed",
+      "category": "text",
+      "page": 0,
+      "bbox": [
+        3196.4939999999997,
+        2149.541,
+        3279.219,
+        2189.304
+      ],
+      "before": "12",
+      "after": null,
+      "description": "Removed text: \"12\"",
+      "confidence": 0.895,
+      "extra": {}
+    }
+  ]
+}

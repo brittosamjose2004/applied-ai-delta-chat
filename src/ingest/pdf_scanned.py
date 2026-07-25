@@ -3,6 +3,12 @@ vision LLM instead of a classic OCR binary (this environment has no
 Tesseract install, and a vision model additionally recovers coarse layout
 without a separate detector) — see README for the trade-off discussion.
 
+OCR goes through the same provider-agnostic LlmClient.complete_vision()
+used by chat, via default_client()'s fallback chain — not hardcoded to one
+provider. A provider without vision support (e.g. the NIM model configured
+here) raises NotImplementedError, which FallbackLlmClient treats like any
+other failure and skips to the next provider.
+
 The model is asked to return line-level text with an approximate bounding
 box (normalized 0-1000, top-left origin) and a self-reported confidence.
 Vision-based OCR bboxes are inherently approximate; confidence is stored on
@@ -10,7 +16,6 @@ every element so the delta engine and chat citations can reflect that.
 """
 from __future__ import annotations
 
-import base64
 import json
 import os
 import uuid
@@ -20,6 +25,9 @@ import fitz  # PyMuPDF
 from src.canonical.model import BBox, CanonicalDocument, Page, SourceFormat, TextElement
 from src.ingest.base import FormatAdapter
 from src.ingest.pdf_native import classify
+from src.observability.logging import get_logger, log
+
+logger = get_logger()
 
 OCR_PROMPT = """You are performing OCR on a scanned engineering drawing (P&ID) page image.
 Return ONLY a JSON array of line-level text elements you can read, each as:
@@ -64,29 +72,38 @@ class ScannedPdfAdapter(FormatAdapter):
         )
 
     def _ocr_page(self, img_bytes: bytes, page_w: float, page_h: float) -> list[TextElement]:
-        import anthropic
+        from src.chat.llm import default_client
 
-        client = anthropic.Anthropic(api_key=os.environ.get("ANTHROPIC_API_KEY"))
-        model = os.environ.get("VISION_OCR_MODEL", "claude-sonnet-4-5")
-        b64 = base64.b64encode(img_bytes).decode()
+        max_tokens = int(os.environ.get("VISION_OCR_MAX_TOKENS", 8192))
+        client = default_client()
 
-        resp = client.messages.create(
-            model=model,
-            max_tokens=4096,
-            messages=[{
-                "role": "user",
-                "content": [
-                    {"type": "image", "source": {"type": "base64", "media_type": "image/png", "data": b64}},
-                    {"type": "text", "text": OCR_PROMPT},
-                ],
-            }],
-        )
-        raw = resp.content[0].text.strip()
-        raw = raw.removeprefix("```json").removeprefix("```").removesuffix("```").strip()
-        try:
-            items = json.loads(raw)
-        except json.JSONDecodeError:
-            items = []
+        items: list = []
+        was_truncated = False
+        last_output_tokens = 0
+        last_provider = "unknown"
+        # One retry if the first attempt salvaged nothing at all — sampling
+        # variance on where a dense page gets cut off means a second attempt
+        # sometimes clears a truncation point earlier and recovers plenty of
+        # elements even without the whole page completing. Not a fix for the
+        # underlying token-budget limit (see README), just cheap resilience.
+        for attempt in range(2):
+            resp = client.complete_vision(img_bytes, OCR_PROMPT, max_tokens=max_tokens)
+            raw = resp.text.strip()
+            raw = raw.removeprefix("```json").removeprefix("```").removesuffix("```").strip()
+            items, was_truncated = _parse_ocr_json(raw)
+            last_output_tokens, last_provider = resp.output_tokens, resp.provider
+            if items:
+                break
+
+        if was_truncated:
+            # Bad/incomplete OCR is exactly the failure category the spec calls
+            # out by name — surface it loudly, don't silently return an empty
+            # page. Dense sheets can still exceed max_tokens; salvaging the
+            # complete elements we did get beats discarding everything.
+            log(logger, "warning",
+                "vision OCR response was truncated (hit max_tokens); salvaged partial results",
+                provider=last_provider, output_tokens=last_output_tokens,
+                max_tokens=max_tokens, elements_recovered=len(items))
 
         elements: list[TextElement] = []
         for item in items:
@@ -107,3 +124,25 @@ class ScannedPdfAdapter(FormatAdapter):
                 extra={"ocr": "vision_llm"},
             ))
         return elements
+
+
+def _parse_ocr_json(raw: str) -> tuple[list, bool]:
+    """Parse the OCR model's JSON array; if the response was cut off mid-array
+    (hit max_tokens on a dense page), salvage every complete element instead
+    of discarding the whole page. Returns (items, was_truncated)."""
+    try:
+        return json.loads(raw), False
+    except json.JSONDecodeError:
+        pass
+
+    last_close = raw.rfind("}")
+    if last_close == -1 or not raw.lstrip().startswith("["):
+        return [], True
+    candidate = raw[:last_close + 1].rstrip()
+    if candidate.endswith(","):
+        candidate = candidate[:-1]
+    candidate += "]"
+    try:
+        return json.loads(candidate), True
+    except json.JSONDecodeError:
+        return [], True
