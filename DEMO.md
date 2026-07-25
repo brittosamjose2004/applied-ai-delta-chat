@@ -81,12 +81,12 @@ Pair: pair_02_dxf_sample (synthetic DXF, proves the DWG/DXF adapter end-to-end)
   precision=1.0  recall=1.0  f1=1.0
 
 RETRIEVAL QUALITY - recall@8 (BM25, no LLM involved, bonus)
-Pair pair_01_lift_gas_compressor: recall@8=0.379 (35-question labeled set)
+Pair pair_01_lift_gas_compressor: recall@8=0.414 (35-question labeled set)
 Pair pair_02_dxf_sample: recall@8=1.0 (15-question labeled set)
 
 GROUNDED CHAT - correctness / groundedness (LLM-as-judge)
-Pair pair_01_lift_gas_compressor: correctness=0.40  groundedness=0.77
-Pair pair_02_dxf_sample: correctness=0.87  groundedness=0.87
+Pair pair_01_lift_gas_compressor: correctness=0.43  groundedness=0.80
+Pair pair_02_dxf_sample: correctness=0.93  groundedness=0.87
 ```
 
 (50 hand-labeled Q&A pairs total across both pairs — see `eval/datasets/`.)

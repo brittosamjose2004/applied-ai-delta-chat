@@ -214,7 +214,7 @@ sources, to check the system doesn't hallucinate), and aggregate/count questions
 extracted document text, not guessed.
 
 **Retrieval quality (`make eval`, BM25 recall@8, no LLM involved):**
-`pair_01`: recall@8 = 0.379 (on the full 35-question set — the earlier 6-question sample
+`pair_01`: recall@8 = 0.414 (on the full 35-question set — the earlier 6-question sample
 had shown a more optimistic 0.5, which is exactly why a larger labeled set matters: it was
 hiding real gaps). `pair_02`: recall@8 = 1.0 (smaller document, less lexical competition
 between chunks). The `pair_01` misses correlate with chat questions the LLM-as-judge later
@@ -223,6 +223,18 @@ failures: BM25's lexical matching doesn't surface a chunk for a question that do
 vocabulary with the source text (e.g. "note 3" never appears verbatim near the
 atmospheric-vent text on the page). This is the strongest argument in this repo for adding
 embedding-based retrieval.
+
+One real class of miss was diagnosed and fixed live: equipment-table questions ("what is
+the duty of the compressor?") were failing because the P&ID's label ("DUTY") and its value
+("776 kW") are two separate `TextElement`s in adjacent table columns — same visual row, zero
+shared vocabulary, so a query matching the label never surfaced the value. Fix:
+`_row_chunks()` in `src/chat/index.py` additionally indexes adjacent same-row cells (within
+`ROW_X_GAP_MAX`, tuned against the actual measured gap between real label/value pairs vs.
+unrelated content elsewhere on the same wide sheet) as a combined chunk. Verified live
+against the exact failing query before and after; measured result: recall@8 0.379 → 0.414,
+chat correctness 0.40 → 0.43, groundedness 0.71 → 0.80. The remaining misses are a different,
+still-open pattern ("what does note 1 say?" shares almost no vocabulary with the note's
+actual text) — the same underlying BM25 limitation, not something the row-merge addresses.
 
 **Cost/latency (`make cost-report`, from real observed traces, not estimates):**
 The delta-alignment stage, not the LLM call, is the actual bottleneck — p50 ≈ 7.4s for the
